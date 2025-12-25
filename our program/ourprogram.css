@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Top Bar ===== */
+/* .top-bar {
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 40px;
+    font-size: 14px;
+}
+
+.top-left span {
+    margin-right: 20px;
+}
+
+.top-right i {
+    margin-left: 15px;
+    cursor: pointer;
+} */
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.logo img {
+    height: 70px;
+    width: 80px;
+}
+
+/* ===== Nav Links ===== */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ===== Donate Button ===== */
+/* .donate-btn {
+    background: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+} */
+ .donate-btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 12px 26px;
+    background: green;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    background: darkgreen;
+    transform: translateY(-3px);
+}
+
+
+.right-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===== Hamburger ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+        z-index: 1000;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        max-height: 700px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background: #25d366;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+/* managing board hero section */
+
+
+/* Main hero section */
+.gallery-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background: url("/image/our\ program\ img1.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoomBg 12s ease-in-out infinite;
+}
+
+/* Background zoom animation */
+@keyframes zoomBg {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Title text */
+.gallery-title {
+    position: relative;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 2;
+    animation: fadeText 1.5s ease;
+}
+
+/* Text animation */
+@keyframes fadeText {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-hero {
+        height: 45vh;
+    }
+
+    .gallery-title {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+}
+/* our program section */
+/* <!-- Our Programs --> */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* 🌈 Page background animation */
+body {
+  background: linear-gradient(120deg, #f0fdf4, #fff7ed, #eef2ff);
+  background-size: 300% 300%;
+  animation: bgMove 8s infinite alternate;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.programs-section {
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Center heading */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #1b5e20;
+  margin-bottom: 50px;
+  animation: titleFade 1s ease;
+}
+
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Program Card */
+.program-card {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+  padding: 25px;
+  border-radius: 18px;
+  background: #ffffff;
+  transition: all 0.4s ease;
+}
+
+.program-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Hover background + lift */
+.program-card:hover {
+  background: linear-gradient(120deg, #e8f5e9, #fff3e0);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.program-card img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  transition: transform 0.4s;
+}
+
+.program-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Text animation */
+.program-content h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  transition: transform 0.4s;
+}
+
+.program-content p {
+  color: #555;
+  transition: transform 0.4s;
+}
+
+.program-card:hover h2 {
+  transform: translateX(10px);
+}
+
+.program-card:hover p {
+  transform: translateX(6px);
+}
+
+.more-text {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Button */
+.toggle-btn {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #f4a261;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background: #e76f51;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .program-card,
+  .program-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .program-card:hover h2,
+  .program-card:hover p {
+    transform: none;
+  }
+}
+
+
+
+/* our program section */
+
+
+/* Section */
+.our-programs {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: orange;
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* Program Card */
+.program-card {
+    background: #fff;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Image */
+.program-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.program-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Meta Info */
+.program-meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #fafafa;
+    font-size: 14px;
+    color: #ff7a00;
+    font-weight: bold;
+}
+
+/* Content */
+.program-content {
+    padding: 25px 20px;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.program-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.program-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Text Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .program-image img {
+        height: 260px;
+    }
+
+    .program-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+
+
+
+/* 
+footer section */
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 50px 20px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-box p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-top: 15px;
+}
+
+/* Quick Links */
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #ffc107;
+    padding-left: 5px;
+}
+
+/* Contact Icons */
+.footer-box i {
+    color: #ffc107;
+    margin-right: 8px;
+}
+
+/* Subscribe */
+.subscribe-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.subscribe-form button {
+    width: 100%;
+    padding: 10px;
+    background: #ffc107;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+    background: #e0a800;
+}
+
+/* Footer Links */
+.footer-links {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin: 0 10px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+}
+
+/* Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-bottom span {
+    color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 8px 0;
+    }
+}
