@@ -1,8 +1,28 @@
-const menuToggle = document.getElementById("menuToggle");
+// const menuToggle = document.getElementById("menuToggle");
+// const navLinks = document.getElementById("navLinks");
+
+// menuToggle.addEventListener("click", () => {
+//     navLinks.classList.toggle("active");
+// });
+const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+// Toggle menu
+toggleBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+// Active link switch
+const links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+
+    // Close menu on mobile after click
+    navLinks.classList.remove("show");
+  });
 });
 
 
@@ -50,3 +70,20 @@ showBtn1.addEventListener("click", () => {
     }
 });
 
+// who we are
+// Scroll animation (modern & simple)
+const animatedItems = document.querySelectorAll(".animate");
+
+const showOnScroll = () => {
+  animatedItems.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (itemTop < windowHeight - 100) {
+      item.classList.add("show");
+    }
+  });
+};
+
+window.addEventListener("scroll", showOnScroll);
+window.addEventListener("load", showOnScroll);

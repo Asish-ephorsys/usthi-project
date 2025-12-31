@@ -155,7 +155,6 @@
   }
 }
 
-
 /* WHATSAPP BUTTON */
 .whatsapp-float {
   position: fixed;
@@ -190,190 +189,193 @@
     font-size: 1rem;
   }
 }
-/* gallery hero section */
+/* managing board hero section */
 
 
-/* Main hero section */
-.gallery-hero {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    background: url("/image/gallery\ hero\ section\ img1.jpeg") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* animation: zoomBg 12s ease-in-out infinite; */
+ /* carrier hero section */
+
+/* ===== Hero ===== */
+.career-hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("/image/managing\ board\ img1.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Background zoom animation */
-@keyframes zoomBg {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+.hero-content {
+  color: #fff;
+  animation: fadeUp 1.2s ease;
 }
 
-/* Dark overlay */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
 }
 
-/* Title text */
-.gallery-title {
-    position: relative;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: bold;
-    z-index: 2;
-    animation: fadeText 1.5s ease;
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
 }
 
-/* Text animation */
-@keyframes fadeText {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-btn {
+  background: #0a9f00;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .gallery-hero {
-        height: 45vh;
-    }
-
-    .gallery-title {
-        font-size: 2rem;
-        text-align: center;
-        padding: 0 10px;
-    }
+.hero-btn:hover {
+  background: #087c00;
+  transform: scale(1.05);
 }
 
-/* galery photo */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* ===== Why Join ===== */
+.why-join {
+  padding: 70px 10%;
+  text-align: center;
 }
 
-.gallery-section {
-    padding: 60px 8%;
-    background: #fff;
+.why-join h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
-.gallery-heading {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    animation: fadeDown 1s ease;
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* Grid layout */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+.feature-box {
+  background: wheat;
+  padding: 30px;
+  border-radius: 15px;
+  transition: 0.4s;
 }
 
-/* Gallery card */
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 25px;
-    animation: fadeUp 1s ease;
+.feature-box i {
+  font-size: 40px;
+  color: #0a9f00;
+  margin-bottom: 15px;
 }
 
-/* Bigger image (right side like screenshot) */
-.gallery-item.big {
-    grid-column: span 2;
-    grid-row: span 2;
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 3px 10px green ;
 }
 
-/* Image */
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+/* ===== Jobs ===== */
+.job-section {
+  padding: 70px 10%;
 }
 
-/* Hover effects */
-.gallery-item::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+.job-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+
+  color: #0a9f00;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.12);
+.job-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.gallery-item:hover::after {
-    opacity: 1;
+.job-card {
+  background: wheat;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.4s;
 }
 
-/* Animations */
+.job-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px green ;
+}
+
+.apply-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #0a9f00;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: #087c00;
+}
+
+/* ===== CTA ===== */
+.career-cta {
+  background: #0a9f00;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta-btn {
+  margin-top: 20px;
+  display: inline-block;
+  background: #fff;
+  color: #0a9f00;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Animations ===== */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .features,
+  .job-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-item.big {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
+  .hero-content h1 {
+    font-size: 38px;
+  }
 }
 
 @media (max-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
+  .features,
+  .job-cards {
+    grid-template-columns: 1fr;
+  }
 
-    .gallery-item.big {
-        grid-column: span 1;
-    }
+  .career-hero {
+    height: 70vh;
+  }
 
-    .gallery-heading {
-        font-size: 2rem;
-    }
+  .hero-content h1 {
+    font-size: 32px;
+  }
 }
 
 

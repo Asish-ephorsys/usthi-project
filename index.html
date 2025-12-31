@@ -15,6 +15,11 @@
 
 
 
+
+
+
+
+
 <!-- ===== Top Info Bar ===== -->
 <!-- <div class="top-bar">
     <div class="top-left">
@@ -31,7 +36,7 @@
 </div> -->
 
 <!-- ===== Navbar ===== -->
-<header class="navbar">
+<!-- <header class="navbar">
     <div class="logo">
         <img src="/image/usthi foundation.jpeg" alt="Logo">
     </div>
@@ -39,7 +44,7 @@
     <nav class="nav-links" id="navLinks">
         <a href="/index.html" class="active">HOME</a>
         <a href="/about us/about.html">ABOUT US</a>
-        <a href="/managing board/managingboard.html">MANAGING BOARD</a>
+        <a href="/carrier/carrier.html">CARRIER</a>
         <a href="/our program/ourprogram.html">OUR PROGRAMS</a>
         <a href="/news/news.html">NEWS</a>
         <a href="/gallery/gallery.html">GALLERY</a>
@@ -47,13 +52,146 @@
     </nav>
 
     <div class="right-area">
-        <button class="donate-btn">DONATE ❤️</button>
+        <button class="donate-btn">DONATE </button>
         <div class="menu-toggle" id="menuToggle">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </div>
+</header> -->
+
+
+
+<header class="navbar">
+  <!-- Logo -->
+  <a href="index.html" class="logo">
+    <img src="/image/usthi foundation.jpeg" alt="Logo">
+  </a>
+
+  <!-- Navigation Links -->
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html" class="active">HOME</a>
+    <a href="/about us/about.html">ABOUT US</a>
+    <a href="/carrier/carrier.html">CARRIER</a>
+    <a href="/our program/ourprogram.html">OUR PROGRAM</a>
+    <a href="/news/news.html">NEWS</a>
+    <a href="/gallery/gallery.html">GALLERY</a>
+    <a href="/contact us/contact.html">CONTACT</a>
+  </nav>
+
+  <!-- Right Section -->
+  <div class="nav-right">
+    <a href="donate.html" id="donateBtn" class="donate-btn">
+      Donate ❤️
+    </a>
+
+
+    <!-- donate popup -->
+     
+
+<!-- DONATE POPUP -->
+<div class="donate-overlay" id="donateOverlay">
+  <div class="donate-container">
+
+    <span class="close-btn" id="closeDonate">&times;</span>
+
+    <h2>Lives Will Flourish When Your Love Flows.</h2>
+    <p class="subtitle">Be a cause for Social Welfare. Donate your part.</p>
+
+    <div class="amount-row">
+      <label><input type="radio" name="amount" value="1000" checked> ₹1000</label>
+      <label><input type="radio" name="amount" value="3000"> ₹3000</label>
+      <label><input type="radio" name="amount" value="5000"> ₹5000</label>
+      <label><input type="radio" name="amount" value="10000"> ₹10000</label>
+    </div>
+
+    <div class="donate-content">
+
+      <div class="donate-form">
+
+        <div class="row">
+          <input id="fullName" type="text" placeholder="Full Name*" autocomplete="off">
+          <input id="phone" type="tel" placeholder="Phone Number*" autocomplete="off">
+        </div>
+
+        <!-- ADDRESS (spellcheck OFF) -->
+        <textarea id="address" rows="3" placeholder="Address*" spellcheck="false"></textarea>
+
+        <!-- CAPTCHA -->
+        <div class="captcha-row">
+          <span>Are you a Human?</span>
+          <strong id="captchaQ"></strong>
+          <input
+            id="captchaInput"
+            type="text"
+            placeholder="Answer"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+
+        <div class="terms-row">
+          <input id="terms" type="checkbox">
+          <span>
+            I agree to
+            <a href="#">Terms of Service</a> &
+            <a href="#">Privacy Policy</a>
+          </span>
+        </div>
+
+        <button id="payBtn" type="button" class="pay-btn">
+          PROCEED TO PAY
+        </button>
+
+      </div>
+
+      <div class="donate-qr">
+        <img src="images/upi-qr.png" alt="UPI QR">
+      </div>
+
+    </div>
+
+    <div class="account-box">
+      <h4>Account Details</h4>
+      <p>Name: USTHI FOUNDATION</p>
+      <p>Bank: XYZ BANK</p>
+      <p>Branch: Bhubaneswar</p>
+      <p>A/C No: 0000000000</p>
+      <p>IFSC: XYZ000000</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- WRONG CAPTCHA -->
+<div class="alert-overlay" id="captchaAlert">
+  <div class="alert-box">
+    <h3>❌ Wrong Answer</h3>
+    <p>Please enter the correct captcha.</p>
+    <button id="closeAlert" class="pay-btn">OK</button>
+  </div>
+</div>
+
+<!-- THANK YOU -->
+<div class="thankyou-overlay" id="thankyouOverlay">
+  <div class="thankyou-box">
+    <h2>🙏 Thank You!</h2>
+    <p>Your donation was successful.</p>
+    <button id="closeThankyou" class="pay-btn">Close</button>
+  </div>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+     
+
+    <!-- Toggle Button -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </header>
 
 
@@ -76,7 +214,7 @@
         At <strong>Our NGO</strong>, we believe small acts of kindness
         create big changes. Together, we can build hope and transform lives.
       </p>
-      <a href="#" class="hero-btn">Join Our Mission</a>
+      <a href="/carrier/carrier.html" class="hero-btn">Join Our Mission</a>
     </div>
 
   </section>
@@ -146,14 +284,9 @@ Together section -->
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-<section class="what-we-do">
+<!-- what we do -->
+ 
+<section id="what-we-do-section" class="what-we-do">
     <div class="section-title">
         <span>◆ What We Do ◆</span>
         <h2>Turning Compassion Into Lasting Impact</h2>
@@ -161,7 +294,7 @@ Together section -->
 
     <div class="cards-container">
 
-        <div class="card active">
+        <div class="card">
             <div class="icon">
                 <i class="fa-solid fa-graduation-cap"></i>
             </div>
@@ -218,37 +351,48 @@ Together section -->
 
                 <div class="card">
             <div class="icon">
-                <i class="fa-solid fa-hand-holding-water"></i>
+                <i class="fa-solid fa-wheelchair"></i>
             </div>
-            <h3>Sanitation</h3>
+            <h3>Disability</h3>
             <p>
-                Promoting clean habits, safe sanitation systems,
-                and community-driven cleanliness initiatives.
-            </p>
-        </div>
-                <div class="card">
-            <div class="icon">
-                <i class="fa-solid fa-hand-holding-water"></i>
-            </div>
-            <h3>Sanitation</h3>
-            <p>
-                Promoting clean habits, safe sanitation systems,
-                and community-driven cleanliness initiatives.
-            </p>
-        </div>
-                <div class="card">
-            <div class="icon">
-                <i class="fa-solid fa-hand-holding-water"></i>
-            </div>
-            <h3>Sanitation</h3>
-            <p>
-                Promoting clean habits, safe sanitation systems,
-                and community-driven cleanliness initiatives.
+                We remove social barriers and empower individuals
+                through focused rehabilitation programs.
             </p>
         </div>
 
+                <div class="card">
+            <div class="icon">
+                <i class="fa-solid fa-wheelchair"></i>
+            </div>
+            <h3>Disability</h3>
+            <p>
+                We remove social barriers and empower individuals
+                through focused rehabilitation programs.
+            </p>
+        </div>
+
+                <div class="card">
+            <div class="icon">
+                <i class="fa-solid fa-wheelchair"></i>
+            </div>
+            <h3>Disability</h3>
+            <p>
+                We remove social barriers and empower individuals
+                through focused rehabilitation programs.
+            </p>
+        </div>
+
+        
+
     </div>
 </section>
+
+
+
+
+
+
+
 
 
 <section class="why-join">
@@ -295,7 +439,7 @@ Together section -->
 </section>
 
 
-<!-- 
+<!--
 get in touch -->
 
 <section class="contact-section">
@@ -316,6 +460,7 @@ get in touch -->
                 <div class="input-group">
                     <input type="text" placeholder="Full Name*" required>
                     <input type="email" placeholder="Email Address*" required>
+                    <input type="text" placeholder="Mobile no" required>
                 </div>
 
                 <textarea placeholder="Your Message" required></textarea>
@@ -333,7 +478,7 @@ get in touch -->
   <div class="container">
 
     <h2 class="section-title">Actions</h2>
-    <p class="section-subtitle">View the latest Actions here</p>
+    <!-- <p class="section-subtitle">View the latest Actions here</p> -->
 
     <div class="actions-cards">
 
@@ -356,7 +501,7 @@ get in touch -->
 
       <!-- Card 2 -->
       <div class="action-card">
-        <img src="/image/action image2.jpg" alt="Action Image">
+        <img src="/image/action image1.jpg" alt="Action Image">
         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor error, eius,
              quia amet in nam, libero eaque ad sed .</h3>
 
@@ -373,7 +518,7 @@ get in touch -->
 
       <!-- Card 3 -->
       <div class="action-card">
-        <img src="/image/action image4.jpg" alt="Action Image">
+        <img src="/image/action image1.jpg" alt="Action Image">
         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor error, eius,
              quia amet in nam, libero eaque ad sed .</h3>
 
@@ -392,85 +537,95 @@ get in touch -->
   </div>
 </section>
 
+<!-- tetimonials section -->
+ <section class="testimonials">
+    <h2>Our Testimonials</h2>
 
+    <div class="testimonial-box">
 
+        <!-- Left Button -->
+        <button class="nav-btn left" onclick="prevTestimonial()">❮</button>
+
+        <!-- Testimonial Content -->
+        <div class="testimonial-content">
+            <div class="image-wrapper">
+                <img id="userImage" src="images/t1.jpg" alt="User">
+            </div>
+
+            <p id="testimonialText">
+                "Your NGO has changed lives and brought hope to many families."
+            </p>
+
+            <h4 id="testimonialName">Samuel Schick</h4>
+        </div>
+
+        <!-- Right Button -->
+        <button class="nav-btn right" onclick="nextTestimonial()">❯</button>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots" id="dots"></div>
+
+</section>
+
+<!-- footer section -->
 <footer class="footer">
-    <div class="footer-container">
+  <div class="footer-container">
 
-        <!-- About -->
-        <div class="footer-box">
-            <h3>About</h3>
-            <p>
-                Usthi Foundation, the Social Organization having Regd.No.
-                000000000 and 00G (0000000000) and 00A
-            </p>
-            <img src="/image/usthi foundation.jpeg" alt="usthi Logo" class="footer-logo">
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-box">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Donners</a></li>
-                <li><a href="#">Give Donation</a></li>
-                <li><a href="#">Become Volunteer</a></li>
-                <li><a href="#">Sitemap</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-box">
-            <h3>Contact Us</h3>
-
-            <p>
-                <i class="fas fa-location-dot"></i>
-                Plot No.0000, SUM,<br>
-                Bhubaneswar, Dist-Khurda,<br>
-                Odisha-751024, India
-            </p>
-
-            <p>
-                <i class="fas fa-envelope"></i>
-                info@usthifoundation.com
-            </p>
-
-            <p>
-                <i class="fas fa-phone"></i>
-                +91 00000000
-            </p>
-        </div>
-
-        <!-- Subscribe -->
-        <div class="footer-box">
-            <h3>Subscribe</h3>
-            <p>Subscribe to our newsletter!</p>
-            <form class="subscribe-form">
-                <input type="email" placeholder="Your Email" required>
-                <button type="submit">Subscribe!</button>
-            </form>
-        </div>
-
+    <!-- About -->
+    <div class="footer-box">
+      <h3>About</h3>
+      <p>
+        Usthi Foundation, the Social Organization having Regd.No. 00000000
+        and 00G (000000000) and 00A
+      </p>
+      <img src="/image/usthi foundation.jpeg" alt="Usthi Foundation Logo" class="footer-logo">
     </div>
 
-    <!-- Bottom Links -->
-    <div class="footer-links">
-        <a href="#">Careers</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms and Conditions</a>
-        <a href="#">FAQs</a>
-        <a href="#">Tenders</a>
-        <a href="#">Refund & Cancellation Policy</a>
-        <a href="#">Contact Us</a>
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/about us/about.html">About Us</a></li>
+        <li><a href="/carrier/carrier.html">Carrier</a></li>
+        <li><a href="/our program/ourprogram.html">Our program</a></li>
+        <li><a href="/news/news.html">News</a></li>
+        <li><a href="/gallery/gallery.html">Gallery</a></li>
+        <li><a href="/contact us/contact.html">Contact</a></li>
+      </ul>
     </div>
 
-    <!-- Copyright -->
-    <div class="footer-bottom">
-        <p>Copyright © 2023. All Rights Reserved <span>Usthi Foundation</span>.</p>
+    <!-- Contact -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-location-dot"></i> Plot No.0000, SUM, Bhubaneswar, Odisha - 751024</p>
+      <p><i class="fas fa-envelope"></i> info@usthifoundation.com</p>
+      <p><i class="fas fa-phone"></i> +91 000000000</p>
     </div>
+
+    <!-- Social Links -->
+    <div class="footer-box">
+      <h3>Social media</h3>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Single Horizontal Line -->
+  <hr class="footer-line">
+
+  <!-- Centered Copyright -->
+  <p class="copyright">
+    Copyright © 2023. All Rights Reserved <span>Usthi Foundation</span>.
+  </p>
+
 </footer>
-
 
 
 
