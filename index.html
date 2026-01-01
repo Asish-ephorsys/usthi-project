@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>USTHI FOUNDATION INDIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome for icons -->
@@ -11,57 +12,6 @@
      
 </head>
 <body>
-
-
-
-
-
-
-
-
-
-<!-- ===== Top Info Bar ===== -->
-<!-- <div class="top-bar">
-    <div class="top-left">
-        <span><i class="fa fa-envelope"></i> info@usthiodisha.com</span>
-        <span><i class="fa fa-phone"></i> +91-9438***</span>
-    </div>
-    <div class="top-right">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-linkedin-in"></i>
-        <i class="fab fa-youtube"></i>
-    </div>
-</div> -->
-
-<!-- ===== Navbar ===== -->
-<!-- <header class="navbar">
-    <div class="logo">
-        <img src="/image/usthi foundation.jpeg" alt="Logo">
-    </div>
-
-    <nav class="nav-links" id="navLinks">
-        <a href="/index.html" class="active">HOME</a>
-        <a href="/about us/about.html">ABOUT US</a>
-        <a href="/carrier/carrier.html">CARRIER</a>
-        <a href="/our program/ourprogram.html">OUR PROGRAMS</a>
-        <a href="/news/news.html">NEWS</a>
-        <a href="/gallery/gallery.html">GALLERY</a>
-        <a href="/contact us/contact.html">CONTACT</a>
-    </nav>
-
-    <div class="right-area">
-        <button class="donate-btn">DONATE </button>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header> -->
-
-
 
 <header class="navbar">
   <!-- Logo -->
@@ -80,50 +30,48 @@
     <a href="/contact us/contact.html">CONTACT</a>
   </nav>
 
-  <!-- Right Section -->
-  <div class="nav-right">
-    <a href="donate.html" id="donateBtn" class="donate-btn">
-      Donate ❤️
-    </a>
-
+<!-- donate button -->
+<div class="nav-right">
+  <a href="#donate.html" id="ngoDonateBtn" class="donate-btn">Donate ❤️</a>
+</div>
 
     <!-- donate popup -->
-     
-
-<!-- DONATE POPUP -->
-<div class="donate-overlay" id="donateOverlay">
+ <!-- DONATE POPUP -->
+<div class="ngo-donate-overlay" id="ngoDonateOverlay">
   <div class="donate-container">
 
-    <span class="close-btn" id="closeDonate">&times;</span>
+    <span class="ngo-close-btn" id="ngoCloseDonate">&times;</span>
 
-    <h2>Lives Will Flourish When Your Love Flows.</h2>
-    <p class="subtitle">Be a cause for Social Welfare. Donate your part.</p>
+    <!-- <h2>Lives Will Flourish When Your Love Flows.</h2> -->
+    <!-- <p class="subtitle">Be a cause for Social Welfare. Donate your part.</p> -->
 
     <div class="amount-row">
-      <label><input type="radio" name="amount" value="1000" checked> ₹1000</label>
-      <label><input type="radio" name="amount" value="3000"> ₹3000</label>
-      <label><input type="radio" name="amount" value="5000"> ₹5000</label>
-      <label><input type="radio" name="amount" value="10000"> ₹10000</label>
+      <label><input type="radio" name="ngoAmount" value="1000" checked> ₹1000</label>
+      <label><input type="radio" name="ngoAmount" value="3000"> ₹3000</label>
+      <label><input type="radio" name="ngoAmount" value="5000"> ₹5000</label>
+      <label><input type="radio" name="ngoAmount" value="custom" id="ngoCustomRadio"> Other</label>
+      <input type="number" id="ngoCustomAmount" placeholder="Amount">
     </div>
+
+    
+     
 
     <div class="donate-content">
 
       <div class="donate-form">
-
         <div class="row">
-          <input id="fullName" type="text" placeholder="Full Name*" autocomplete="off">
-          <input id="phone" type="tel" placeholder="Phone Number*" autocomplete="off">
+          <input id="ngoFullName" type="text" placeholder="Full Name*" autocomplete="off">
+          <input id="ngoPhone" type="tel" placeholder="Phone Number*" autocomplete="off">
         </div>
 
-        <!-- ADDRESS (spellcheck OFF) -->
-        <textarea id="address" rows="3" placeholder="Address*" spellcheck="false"></textarea>
+        <textarea id="ngoAddress" rows="3" placeholder="Address*" spellcheck="false"></textarea>
 
         <!-- CAPTCHA -->
         <div class="captcha-row">
           <span>Are you a Human?</span>
-          <strong id="captchaQ"></strong>
+          <strong id="ngoCaptchaQ"></strong>
           <input
-            id="captchaInput"
+            id="ngoCaptchaInput"
             type="text"
             placeholder="Answer"
             autocomplete="off"
@@ -132,7 +80,7 @@
         </div>
 
         <div class="terms-row">
-          <input id="terms" type="checkbox">
+          <input id="ngoTerms" type="checkbox">
           <span>
             I agree to
             <a href="#">Terms of Service</a> &
@@ -140,49 +88,55 @@
           </span>
         </div>
 
-        <button id="payBtn" type="button" class="pay-btn">
+        <button id="ngoPayBtn" type="button" class="pay-btn">
           PROCEED TO PAY
         </button>
 
       </div>
 
-      <div class="donate-qr">
+      <!-- <div class="donate-qr">
         <img src="images/upi-qr.png" alt="UPI QR">
-      </div>
+      </div> -->
 
     </div>
 
-    <div class="account-box">
+   <!-- <div class="account-box">
       <h4>Account Details</h4>
-      <p>Name: USTHI FOUNDATION</p>
-      <p>Bank: XYZ BANK</p>
+      <p>Name:Usthi foundation</p>
+      <p>Bank: SBI</p>
       <p>Branch: Bhubaneswar</p>
-      <p>A/C No: 0000000000</p>
-      <p>IFSC: XYZ000000</p>
-    </div>
+      <p>A/C No: 000000</p>
+      <p>IFSC: SBI00000</p>
+    </div> -->
 
   </div>
 </div>
 
 <!-- WRONG CAPTCHA -->
-<div class="alert-overlay" id="captchaAlert">
+<div class="ngo-alert-overlay" id="ngoCaptchaAlert">
   <div class="alert-box">
     <h3>❌ Wrong Answer</h3>
     <p>Please enter the correct captcha.</p>
-    <button id="closeAlert" class="pay-btn">OK</button>
+    <button id="ngoCloseAlert" class="pay-btn">OK</button>
   </div>
 </div>
 
 <!-- THANK YOU -->
-<div class="thankyou-overlay" id="thankyouOverlay">
+<div class="ngo-thankyou-overlay" id="ngoThankyouOverlay">
   <div class="thankyou-box">
     <h2>🙏 Thank You!</h2>
     <p>Your donation was successful.</p>
-    <button id="closeThankyou" class="pay-btn">Close</button>
+    <button id="ngoCloseThankyou" class="pay-btn">Close</button>
   </div>
 </div>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+     
+     
+     
+
+<!-- DONATE POPUP  end -->
+
      
 
     <!-- Toggle Button -->

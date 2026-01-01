@@ -1,23 +1,25 @@
-// const menuToggle = document.getElementById("menuToggle");
-// const navLinks = document.getElementById("navLinks");
 
-// menuToggle.addEventListener("click", () => {
-//     navLinks.classList.toggle("active");
-// });
-// donate button
-const donateBtn = document.getElementById("donateBtn");
-const donateOverlay = document.getElementById("donateOverlay");
-const closeDonate = document.getElementById("closeDonate");
+const donateBtn = document.getElementById("ngoDonateBtn");
+const donateOverlay = document.getElementById("ngoDonateOverlay");
+const closeDonate = document.getElementById("ngoCloseDonate");
 
-const payBtn = document.getElementById("payBtn");
-const thankyouOverlay = document.getElementById("thankyouOverlay");
-const closeThankyou = document.getElementById("closeThankyou");
+const payBtn = document.getElementById("ngoPayBtn");
+const thankyouOverlay = document.getElementById("ngoThankyouOverlay");
+const closeThankyou = document.getElementById("ngoCloseThankyou");
 
-const alertOverlay = document.getElementById("captchaAlert");
-const closeAlert = document.getElementById("closeAlert");
+const alertOverlay = document.getElementById("ngoCaptchaAlert");
+const closeAlert = document.getElementById("ngoCloseAlert");
 
-const captchaQ = document.getElementById("captchaQ");
-const captchaInput = document.getElementById("captchaInput");
+const captchaQ = document.getElementById("ngoCaptchaQ");
+const captchaInput = document.getElementById("ngoCaptchaInput");
+
+const fullName = document.getElementById("ngoFullName");
+const phone = document.getElementById("ngoPhone");
+const address = document.getElementById("ngoAddress");
+const terms = document.getElementById("ngoTerms");
+
+const customAmount = document.getElementById("ngoCustomAmount");
+const customRadio = document.getElementById("ngoCustomRadio");
 
 let captchaAnswer = 0;
 
@@ -36,26 +38,32 @@ donateBtn.onclick = e => {
 };
 
 closeDonate.onclick = () => donateOverlay.style.display = "none";
+closeAlert.onclick = () => alertOverlay.style.display = "none";
+closeThankyou.onclick = () => thankyouOverlay.style.display = "none";
+
+customAmount.addEventListener("focus", () => {
+  customRadio.checked = true;
+});
 
 payBtn.onclick = () => {
-  const name = fullName.value.trim();
-  const phone = phone.value.trim();
-  const address = address.value.trim();
-  const captcha = captchaInput.value.trim();
-  const terms = terms.checked;
-
-  if (!name || !phone || !address || !captcha || !terms) {
+  if (!fullName.value || !phone.value || !address.value || !terms.checked) {
     alert("Please fill all required fields");
     return;
   }
 
-  if (parseInt(captcha) !== captchaAnswer) {
+  if (parseInt(captchaInput.value) !== captchaAnswer) {
     alertOverlay.style.display = "flex";
     generateCaptcha();
     return;
   }
 
-  const amount = document.querySelector("input[name='amount']:checked").value;
+  const selected = document.querySelector("input[name='ngoAmount']:checked");
+  let amount = selected.value === "custom" ? customAmount.value : selected.value;
+
+  if (!amount || amount <= 0) {
+    alert("Please enter a valid amount");
+    return;
+  }
 
   new Razorpay({
     key: "rzp_test_1234567890",
@@ -70,8 +78,10 @@ payBtn.onclick = () => {
   }).open();
 };
 
-closeAlert.onclick = () => alertOverlay.style.display = "none";
-closeThankyou.onclick = () => thankyouOverlay.style.display = "none";
+
+
+
+
 
 
 // end
