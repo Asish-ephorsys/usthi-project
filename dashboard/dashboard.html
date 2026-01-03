@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ASISH PANEL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <!-- AUTH MODAL -->
+    <div class="auth-modal" id="authModal">
+      <div class="auth-box">
+        <h2 id="authTitle">Admin Panel</h2>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Username"
+          autocomplete="off"
+        />
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          autocomplete="new-password"
+        />
+<!-- 
+        <button onclick="openDemo()">login (demo)</button> -->
+        <button id="loginDemoBtn" onclick="openDemo()">login (demo)</button>
+
+
+        <div class="auth-links">
+          <span onclick="showSignup()">Signup</span> |
+          <span onclick="showForgot()">Forgot Password?</span>
+        </div>
+
+        <!-- FORGOT PASSWORD STEP 1 -->
+        <div id="forgotStep1" style="display: none">
+          <h2>Forgot Password</h2>
+          <p style="margin-bottom: 10px">Enter your email address</p>
+          <input
+            type="email"
+            id="forgotEmail"
+            placeholder="Enter email address"
+          />
+          <button onclick="forgotContinue()">Continue</button>
+        </div>
+
+        <!-- FORGOT PASSWORD STEP 2 -->
+        <div id="forgotStep2" style="display: none">
+          <h2>New Password</h2>
+          <p style="margin-bottom: 10px">
+            Please create a new password that you don’t use on any other site.
+          </p>
+          <input
+            type="password"
+            id="newPassword"
+            placeholder="Create new password"
+          />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm your password"
+          />
+          <button onclick="changePassword()">Change</button>
+        </div>
+
+        <!-- SIGNUP FORM (NEW DESIGN) -->
+        <div id="signupBox" style="display: none">
+          <h2 class="signup-title">Create Account</h2>
+
+          <input type="text" id="signupName" placeholder="Name" />
+          <input type="email" id="signupEmail" placeholder="Email" />
+          <input type="password" id="signupPassword" placeholder="Password" />
+
+          <button onclick="signup()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- POPUP MESSAGE -->
+    <div class="popup-msg" id="popupMsg"></div>
+
+    <!-- ADMIN PANEL -->
+    <div class="admin-panel" id="adminPanel">
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="logo">
+          <img src="/image/usthi foundation.jpeg" />
+          <span> ADMIN PANEL</span>
+          <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        </div>
+        <ul class="menu">
+          <li onclick="openUpload('Photo')">📷 Photo Gallery</li>
+          <li onclick="openUpload('Video')">🎥 Video Library</li>
+          <li onclick="openUpload('News')">📰 News Articles</li>
+          <li onclick="openUpload('Event')">📅 Event Management</li>
+        </ul>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <header class="header">
+          <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+          <div class="nav-right">
+            <div class="profile" onclick="toggleDropdown()">
+              <img src="/image/usthi foundation.jpeg" />
+              <span>Admin</span> ▼
+              <div class="dropdown" id="dropdown">
+                <button onclick="logout()">Profile</button>
+                <button onclick="logout()">Logout</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- STATS -->
+        <div class="stats">
+          <div>📷 Photos <span id="imgCount">0</span></div>
+          <div>🎥 Videos <span id="videoCount">0</span></div>
+          <div>📰 News <span id="newsCount">0</span></div>
+          <div>📅 Events <span id="eventCount">0</span></div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="cards">
+          <div class="card">
+            <h3>Manage Photo Gallery</h3>
+            <img src="/image/teo.jpeg" />
+            <button onclick="openUpload('Photo')">Add New Photo</button>
+            <button onclick="showGallery()">View Gallery</button>
+          </div>
+          <div class="card">
+            <h3>Manage Video Library</h3>
+            <img src="/image/WhatsApp Image 2026-01-01 at 11.21.36 AM.jpeg" />
+            <button onclick="openUpload('Video')">Upload Video</button>
+            <button onclick="showGallery()">View Video</button>
+          </div>
+          <div class="card">
+            <h3>News & Updates</h3>
+            <img src="/image/one.jpeg" />
+            <button onclick="openUpload('News')">Add News</button>
+            <button onclick="showGallery()">View News</button>
+          </div>
+          <div class="card">
+            <h3>Event Management</h3>
+            <img src="/image/WhatsApp Image 2026-01-01 at 11.08.49 AM.jpeg" />
+            <button onclick="openUpload('Event')">Create Event</button>
+            <button onclick="showGallery()">Manage Events</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- sidebar pop up part -->
+
+    <div class="popup" id="uploadPopup">
+      <div class="popup-box">
+        <span class="close" onclick="closeUpload()">×</span>
+        <h3 id="uploadTitle"></h3>
+        <input type="file" id="uploadInput" />
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
