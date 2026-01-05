@@ -25,57 +25,7 @@
           placeholder="Password"
           autocomplete="new-password"
         />
-<!-- 
-        <button onclick="openDemo()">login (demo)</button> -->
-        <button id="loginDemoBtn" onclick="openDemo()">login (demo)</button>
-
-
-        <div class="auth-links">
-          <span onclick="showSignup()">Signup</span> |
-          <span onclick="showForgot()">Forgot Password?</span>
-        </div>
-
-        <!-- FORGOT PASSWORD STEP 1 -->
-        <div id="forgotStep1" style="display: none">
-          <h2>Forgot Password</h2>
-          <p style="margin-bottom: 10px">Enter your email address</p>
-          <input
-            type="email"
-            id="forgotEmail"
-            placeholder="Enter email address"
-          />
-          <button onclick="forgotContinue()">Continue</button>
-        </div>
-
-        <!-- FORGOT PASSWORD STEP 2 -->
-        <div id="forgotStep2" style="display: none">
-          <h2>New Password</h2>
-          <p style="margin-bottom: 10px">
-            Please create a new password that you don’t use on any other site.
-          </p>
-          <input
-            type="password"
-            id="newPassword"
-            placeholder="Create new password"
-          />
-          <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm your password"
-          />
-          <button onclick="changePassword()">Change</button>
-        </div>
-
-        <!-- SIGNUP FORM (NEW DESIGN) -->
-        <div id="signupBox" style="display: none">
-          <h2 class="signup-title">Create Account</h2>
-
-          <input type="text" id="signupName" placeholder="Name" />
-          <input type="email" id="signupEmail" placeholder="Email" />
-          <input type="password" id="signupPassword" placeholder="Password" />
-
-          <button onclick="signup()">Sign Up</button>
-        </div>
+        <button id="loginDemoBtn" onclick="openDemo()">login</button>
       </div>
     </div>
 
@@ -96,6 +46,14 @@
           <li onclick="openUpload('Video')">🎥 Video Library</li>
           <li onclick="openUpload('News')">📰 News Articles</li>
           <li onclick="openUpload('Event')">📅 Event Management</li>
+          <!-- <li onclick="openContactPage()">📩 Contact Messages</li> -->
+          <li onclick="openContactPage()">
+            📩 Contact Messages <span id="msgCount" class="msg-count">0</span>
+          </li>
+          <li onclick="openDonationPage()">
+            💰 Donation Details
+            <span id="donationCount" class="msg-count">0</span>
+          </li>
         </ul>
       </aside>
 
@@ -109,7 +67,7 @@
               <img src="/image/usthi foundation.jpeg" />
               <span>Admin</span> ▼
               <div class="dropdown" id="dropdown">
-                <button onclick="logout()">Profile</button>
+                <!-- <button>Profile</button> -->
                 <button onclick="logout()">Logout</button>
               </div>
             </div>
@@ -155,12 +113,62 @@
     </div>
 
     <!-- sidebar pop up part -->
+    <!-- UPLOAD POPUP -->
+    <div class="upload-popup" id="uploadPopup">
+      <div class="upload-box">
+        <span class="upload-close" onclick="closeUpload()">✖</span>
 
-    <div class="popup" id="uploadPopup">
-      <div class="popup-box">
-        <span class="close" onclick="closeUpload()">×</span>
-        <h3 id="uploadTitle"></h3>
+        <h2 id="uploadTitle"></h2>
+
+        <!-- FILE INPUT -->
         <input type="file" id="uploadInput" />
+
+        <!-- EVENT DESCRIPTION -->
+        <textarea id="eventDesc" placeholder="Event description..."></textarea>
+
+        <button onclick="submitUpload()">Submit</button>
+      </div>
+    </div>
+
+    <!--  
+    new feature add now  -->
+    <!-- CONTACT ADMIN PAGE -->
+    <div class="contact-admin" id="contactAdmin">
+      <div class="contact-header">
+        <h2>Contact Messages</h2>
+        <button class="close-contact" onclick="closeContactPage()">✖</button>
+      </div>
+
+      <div class="contact-grid" id="contactGrid">
+        <!-- Messages will appear here -->
+      </div>
+    </div>
+
+    <!-- CONTACT MESSAGE POPUP -->
+    <div class="message-popup" id="messagePopup">
+      <div class="popup-box">
+        <span class="popup-close" onclick="closeMessagePopup()">✖</span>
+        <div id="popupDetails"></div>
+      </div>
+    </div>
+
+
+    
+    <!-- DONATION ADMIN PAGE -->
+    <div class="donation-admin" id="donationAdmin">
+      <div class="contact-header">
+        <h2>Donation Details</h2>
+        <button class="close-contact" onclick="closeDonationPage()">✖</button>
+      </div>
+
+      <div class="donation-grid" id="donationGrid"></div>
+    </div>
+
+    <!-- DONATION POPUP -->
+    <div class="donation-popup" id="donationPopup">
+      <div class="popup-box">
+        <span class="popup-close" onclick="closeDonationPopup()">✖</span>
+        <div id="donationPopupDetails"></div>
       </div>
     </div>
 

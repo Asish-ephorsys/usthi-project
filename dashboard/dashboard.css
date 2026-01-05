@@ -41,7 +41,7 @@ body {
     box-shadow: 0 0 15px rgba(30, 79, 163, 0.35);
   }
   50% {
-    /* box-shadow: 0 0 35px rgba(29, 233, 182, 0.6); */
+    
     box-shadow: 0 0 55px rgba(52, 250, 201, 0.6);
   }
   100% {
@@ -67,7 +67,6 @@ body {
   }
 }
 
-
 .auth-box input {
   width: 100%;
   margin: 10px 0;
@@ -83,6 +82,7 @@ body {
   background: linear-gradient(270deg, #1de9b6, #00acc1, #1de9b6);
   background-size: 300% 300%;
   animation: btnGlow 2s infinite;
+  margin-top: 15px;
   color: #fff;
   font-size: 19px;
   font-weight: bold;
@@ -139,15 +139,6 @@ body {
   height: 20px;
 }
 
-.auth-links {
-  margin-top: 22px;
-  font-size: 17px;
-}
-
-.auth-links span {
-  color: #151e16;
-  cursor: pointer;
-}
 /* BIG CROSS BUTTON */
 .close-btn-big {
   position: absolute;
@@ -158,8 +149,6 @@ body {
   background: none;
   cursor: pointer;
 }
-
-
 
 /* ===============================
    GOOGLE STYLE TOP POPUP
@@ -233,7 +222,6 @@ body {
     padding: 14px 40px 14px 16px;
   }
 }
-
 
 /* ADMIN */
 .admin-panel {
@@ -366,9 +354,7 @@ body {
 .main {
   margin-left: 320px;
   transition: margin-left 0.35s ease;
-   width: 100% !important;
-  /* width: 100% !important;
-  max-width: 100% !important; */
+  width: 100% !important;
 }
 
 @media (max-width: 768px) {
@@ -386,9 +372,6 @@ body {
   padding: 15px;
   border-radius: 8px;
 }
-
-
-
 
 /* ===== HAMBURGER ===== */
 .hamburger {
@@ -423,8 +406,6 @@ body {
 }
 .nav-right {
   margin-left: auto;
-
-
 }
 .menu-btn {
   display: none;
@@ -462,10 +443,9 @@ body {
   min-width: 140px;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
- 
+
   z-index: 2000;
 }
-
 
 .dropdown button {
   width: 100%;
@@ -502,9 +482,6 @@ body {
   gap: 15px;
   margin: 20px 0;
 }
-/* .stats:hover{
- translate: scale(1.5);
-} */
 
 .stats div {
   background: #fff;
@@ -518,11 +495,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-
-  /* display: grid;
-  grid-template-columns: repeat(2, minmax(0, 420px));
-  justify-content: center;
-  gap: 20px; */
 }
 .card {
   background: #fff;
@@ -538,7 +510,6 @@ body {
 .card img {
   width: 90%;
   height: 300px;
-  /* border-radius: 8px; */
   margin: 10px;
   padding: 5px;
   border: 3px solid rgb(204, 202, 202);
@@ -547,14 +518,7 @@ body {
 .card:hover img {
   transform: scale(1.05);
 }
-/* .card button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #1e4fa3;
-  color: white;
-  border: none;
-  border-radius: 6px;
-} */
+
 .card button {
   background: white;
   color: #1e4fa3;
@@ -594,30 +558,73 @@ body {
   }
 }
 
-/* sidebar pop up part */
-.popup {
+
+.upload-popup {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
-
-  z-index: 3000;
 }
 
-.popup-box {
+.upload-box {
   background: #fff;
-  padding: 20px;
   width: 90%;
-  font-size: 18px;
-  max-width: 350px;
-  border-radius: 8px;
+  max-width: 450px;
+  height: 350px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  position: relative;
 }
-.popup-box .close {
+
+.upload-box h2 {
+  margin-bottom: 20px;
+}
+
+.upload-box input,
+.upload-box textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.upload-box textarea {
+  display: none;
+  resize: none;
+  height: 100px;
+}
+
+.upload-box button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #1e4fa3;
+  color: #fff;
+  border: none;
   cursor: pointer;
-  float: right !important;
-  font-size: 33px;
+}
+
+.upload-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .upload-box {
+    width: 95%;
+    padding: 20px;
+  }
 }
 
 /* RESPONSIVE */
@@ -703,33 +710,236 @@ body {
     font-size: 16px;
     top: 126px;
   }
-} 
-
-
-/* SIGNUP DESIGN (IMAGE STYLE) */
-.signup-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #1de9b6;
 }
 
-/* clean inputs – no icons */
-#signupBox input {
+/* 
+ new feature add now  --> */
+
+/* ===============================
+   CONTACT ADMIN PAGE
+================================ */
+
+.contact-admin {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #f4f6fa;
+  z-index: 9000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-contact {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+}
+
+/* GRID */
+.contact-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+/* MESSAGE CARD */
+.contact-card {
   width: 100%;
-  margin: 12px 0;
-  padding: 14px;
-  border-radius: 6px;
-  border: 1px solid #1de9b6;
-  font-size: 16px;
+  height: 200px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  overflow: hidden;
 }
 
-/* responsive */
-@media (max-width: 480px) {
-  .signup-title {
-    font-size: 22px;
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 480px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
-/* extra code */
+/* ===============================
+   CONTACT EXTRA FEATURES
+================================ */
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-actions button {
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+  border: none;
+}
+
+.new-badge {
+
+  background: green;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+.msg-count {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+/* HOVER EFFECT FOR CONTACT CARDS */
+.contact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* POPUP BACKGROUND */
+.message-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* POPUP BOX */
+.popup-box {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 14px;
+  position: relative;
+  animation: popupScale 0.3s ease;
+}
+
+@keyframes popupScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* CLOSE BUTTON */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 26px;
+  cursor: pointer;
+  color: red;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .popup-box {
+    width: 95%;
+  }
+}
+
+/* ===============================
+   DONATION PAGE
+================================ */
+
+.donation-admin {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #f4f6fa;
+  z-index: 9000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* GRID */
+.donation-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.donation-card {
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.donation-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  background: #f2f2f2;
+  margin-bottom: 15px;
+  line-height:1;
+}
+
+.donation-card small {
+  font-size: 12px;
+  color: #555;
+}
+
+/* POPUP */
+.donation-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
