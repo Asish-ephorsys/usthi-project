@@ -1,5 +1,3 @@
-
-
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 

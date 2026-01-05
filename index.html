@@ -393,8 +393,7 @@ Together section -->
 </section>
 
 
-<!--
-get in touch -->
+<!-- get in touch -->
 
 <section class="contact-section">
     <div class="overlay"></div>
@@ -406,26 +405,31 @@ get in touch -->
         </div>
 
         <!-- Right Form -->
-        <div class="contact-content">
-            <span class="small-title">Get In Touch</span>
-            <h2>We’d Love to Hear From You</h2>
+      <div class="contact-content">
+          <span class="small-title">Get In Touch</span>
+          <h2>We’d Love to Hear From You</h2>
 
-            <form>
-                <div class="input-group">
-                    <input type="text" placeholder="Full Name*" required>
-                    <input type="email" placeholder="Email Address*" required>
-                    <input type="text" placeholder="Mobile no" required>
-                </div>
+          <!-- ADD id="contactForm" -->
+          <form id="contactForm">
+              <div class="input-group">
+                  <input type="text" id="name" placeholder="Full Name*" required>
+                  <input type="email" id="email" placeholder="Email Address*" required>
+                  <input type="text" id="phone" placeholder="Mobile no*" required>
+              </div>
 
-                <textarea placeholder="Your Message" required></textarea>
+              <textarea id="message" placeholder="Your Message*" required></textarea>
 
-                <button type="submit">
-                    Contact Us →
-                </button>
-            </form>
-        </div>
+              <button type="submit">
+                  Contact Us →
+              </button>
+          </form>
+      </div>
+      ̥
     </div>
 </section>
+
+
+<script src="/contact us/contactus.js"></script>
 
 <!-- action section -->
  <section class="actions-section">
