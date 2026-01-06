@@ -1,3 +1,45 @@
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("errorMessage");
+
+    errorMessage.innerText = "";
+//  🔐 DEMO LOGIN (TEMP)
+      // if (username === "admin@gmail.com" && password === "123456") {
+      //   showPopup("Login successful", "success");
+      //   document.getElementById("authModal").style.display = "none";
+      //   adminPanel.style.display = "flex";
+      //   return;
+      // }
+    try {
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+
+      if (response.ok) {
+        // ✅ Login success → redirect
+        window.location.href = "dashboard.html";
+      } else {
+        // ❌ Login failed → show popup message
+        const data = await response.json();
+        errorMessage.innerText = data.detail || "Invalid username or password";
+      }
+    } catch (error) {
+      errorMessage.innerText = "Server not reachable";
+    }
+  });
+
 let currentType = "";
 let popupTimer;
 
@@ -20,10 +62,10 @@ function closePopup() {
   popupMsg.classList.remove("show");
 }
 
-function openDemo() {
-  document.getElementById("authModal").style.display = "none";
-  adminPanel.style.display = "flex";
-}
+// function openDemo() {
+//   document.getElementById("authModal").style.display = "none";
+//   adminPanel.style.display = "flex";
+// }
 
 function logout() {
   location.reload();
@@ -73,7 +115,7 @@ function closeSection() {
 
 /* safely find login demo button */
 function getLoginDemoBtn() {
-  return document.querySelector('.auth-box button[onclick="openDemo()"]');
+  return document.querySelector('#loginForm button[onclick="openDemo()"]');
 }
 
 /* hide login demo button */
@@ -250,7 +292,7 @@ function addContactMessage(data) {
 //       read: false,
 //       time: new Date().toLocaleString(),
 //     },
-//         {
+//     {
 //       id: 2,
 //       name: "Asish",
 //       email: "aman@gmail.com",
@@ -536,41 +578,41 @@ updateDonationCounter();
    DUMMY DONATION DATA (TESTING ONLY)
 ====================================== */
 
-// function addDummyDonations() {
-//   const dummy = [
-//     {
-//       image: "./image/payment1.jpeg",
-//       name: "Rahul Sharma",
-//       mobile: "9876543210",
-//       utr: "UTR123456789",
-//     },
-//     {
-//       image: "./image/payment2.jpeg",
-//       name: "Anita Verma",
-//       mobile: "9123456789",
-//       utr: "UTR987654321",
-//     },
-//     {
-//       image: "./image/payment2.jpeg",
-//       name: "Anita Verma",
-//       mobile: "9123456789",
-//       utr: "UTR987654321",
-//     },
-//     {
-//       image: "./image/payment2.jpeg",
-//       name: "Anita Verma",
-//       mobile: "9123456789",
-//       utr: "UTR987654321",
-//     },
-//   ];
+function addDummyDonations() {
+  const dummy = [
+    {
+      image: "./image/payment1.jpeg",
+      name: "Rahul Sharma",
+      mobile: "9876543210",
+      utr: "UTR123456789",
+    },
+    {
+      image: "./image/payment2.jpeg",
+      name: "Anita Verma",
+      mobile: "9123456789",
+      utr: "UTR987654321",
+    },
+    {
+      image: "./image/payment2.jpeg",
+      name: "Anita Verma",
+      mobile: "9123456789",
+      utr: "UTR987654321",
+    },
+    {
+      image: "./image/payment2.jpeg",
+      name: "Anita Verma",
+      mobile: "9123456789",
+      utr: "UTR987654321",
+    },
+  ];
 
-//   let donations = JSON.parse(localStorage.getItem("donations")) || [];
-//   if (donations.length > 0) return;
+  let donations = JSON.parse(localStorage.getItem("donations")) || [];
+  if (donations.length > 0) return;
 
-//   dummy.forEach((d) => addDonation(d));
-// }
+  dummy.forEach((d) => addDonation(d));
+}
 
-// addDummyDonations();
+addDummyDonations();
 
 // localStorage.removeItem("donations");
 // location.reload();

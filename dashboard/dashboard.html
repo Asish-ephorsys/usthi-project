@@ -9,14 +9,16 @@
   <body>
     <!-- AUTH MODAL -->
     <div class="auth-modal" id="authModal">
-      <div class="auth-box">
+      <!-- <div class="auth-box"> -->
+      <form id="loginForm">
         <h2 id="authTitle">Admin Panel</h2>
 
         <input
           type="email"
-          id="email"
+          id="username"
           placeholder="Username"
           autocomplete="off"
+          required
         />
 
         <input
@@ -24,9 +26,14 @@
           id="password"
           placeholder="Password"
           autocomplete="new-password"
+          required
         />
-        <button id="loginDemoBtn" onclick="openDemo()">login</button>
-      </div>
+        <div id="errorMessage" style="color: red"></div>
+        <!-- <button id="loginDemoBtn" onclick="openDemo()">login</button> -->
+        <button type="submit">Login</button>
+
+        <!-- </div> -->
+      </form>
     </div>
 
     <!-- POPUP MESSAGE -->
@@ -152,8 +159,6 @@
       </div>
     </div>
 
-
-    
     <!-- DONATION ADMIN PAGE -->
     <div class="donation-admin" id="donationAdmin">
       <div class="contact-header">
