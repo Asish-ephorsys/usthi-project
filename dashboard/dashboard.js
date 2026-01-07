@@ -8,13 +8,6 @@ document
     const errorMessage = document.getElementById("errorMessage");
 
     errorMessage.innerText = "";
-//  🔐 DEMO LOGIN (TEMP)
-      // if (username === "admin@gmail.com" && password === "123456") {
-      //   showPopup("Login successful", "success");
-      //   document.getElementById("authModal").style.display = "none";
-      //   adminPanel.style.display = "flex";
-      //   return;
-      // }
     try {
       const response = await fetch("http://localhost:8000/login", {
         method: "POST",
@@ -29,7 +22,10 @@ document
 
       if (response.ok) {
         // ✅ Login success → redirect
-        window.location.href = "dashboard.html";
+         showPopup("Login successful", "success");
+        document.getElementById("authModal").style.display = "none";
+        adminPanel.style.display = "flex";
+        return;
       } else {
         // ❌ Login failed → show popup message
         const data = await response.json();
