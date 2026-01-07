@@ -454,6 +454,9 @@ footer section */
   color: #fbb034;
   font-weight: bold;
 }
+.copyright #ephorsys{
+  text-decoration: none;
+}
 
 /* Responsive */
 @media (max-width: 992px) {

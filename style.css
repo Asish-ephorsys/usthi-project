@@ -69,7 +69,7 @@
 }
 
 /* Donate Button */
-#ngoDonateBtn.donate-btn {
+#ngoDonateBtn.ngo-donate-btn {
   background: #0a9f00;
   color: #fff;
   padding: 10px 25px;
@@ -87,297 +87,179 @@
 /* ===============================
    OVERLAY
 ================================ */
-.ngo-donate-overlay,
-.ngo-alert-overlay,
-.ngo-thankyou-overlay {
+
+/* ================= OVERLAY ================= */
+
+/* ===== OVERLAY ===== */
+.ngo-overlay {
+  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
+  z-index: 9998;
+}
+
+/* ===== POPUP ===== */
+.ngo-popup {
   display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-}
-
-/* ===============================
-   POPUP CONTAINER
-================================ */
-.donate-container {
-  background: #fff;
-  width: 92%;
-  margin-top: 100px;
+  position: fixed;
+  inset: 0;
+  margin: auto;
   
-  max-width: 980px;
-  padding: 28px;
-  border-radius: 12px;
-  position: relative;
-}
-
-/* ===============================
-   CLOSE ICON
-================================ */
-.ngo-close-btn {
-  position: absolute;
-  top: 16px;
-  right: 22px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ===============================
-   HEADINGS
-================================ */
-.donate-container h2 {
-  font-size: 26px;
-  margin-bottom: 6px;
-}
-
-.subtitle {
-  color: green;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-/* ===============================
-   AMOUNT ROW
-================================ */
-.amount-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 22px;
-  flex-wrap: wrap;
-}
-
-.amount-row label {
-  font-size: 15px;
-  cursor: pointer;
-}
-
-#ngoCustomAmount {
-  width: 120px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 95%;
+  max-width: 850px;
+  height: 90vh;
   background: #fff;
-  color: #000;
+  border-radius: 10px;
+  z-index: 9999;
+  overflow: hidden;
 }
 
-/* ===============================
-   CONTENT GRID
-================================ */
-.donate-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 26px;
+/* HEADER */
+.ngo-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.ngo-close-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* ===============================
-   FORM
-================================ */
-.donate-form {
-  width: 100%;
+/* BODY */
+.ngo-popup-body {
+  padding: 20px;
+  height: calc(90vh - 60px);
+  overflow-y: auto;
 }
 
-.row {
+/* TOP SECTION */
+.ngo-top-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
-
-/* ===============================
-   INPUTS & TEXTAREA
-================================ */
-#ngoFullName,
-#ngoPhone,
-#ngoAddress,
-#ngoCaptchaInput {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-  color: #000;
-  font-size: 14px;
+.ngo-bank-details {
+  background: #e9f7f7;
+  padding: 15px;
+  border-radius: 8px;
 }
-
-#ngoAddress {
-  margin-top: 14px;
-  resize: none;
-}
-
-/* ===============================
-   CAPTCHA (SINGLE LINE)
-================================ */
-.captcha-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 18px 0;
-  white-space: nowrap;
-}
-
-#ngoCaptchaInput {
-  width: 130px;
-}
-
-/* ===============================
-   TERMS
-================================ */
-.terms-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 22px;
-  font-size: 14px;
-}
-
-#ngoTerms {
-  width: 16px;
-  height: 16px;
-}
-
-/* ===============================
-   PAY BUTTON
-================================ */
-.pay-btn {
-  padding: 12px 36px;
-  border: 2px solid orange;
-  background: none;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-/* ===============================
-   QR SECTION
-================================ */
-.donate-qr img {
-  max-width: 260px;
-  display: block;
-}
-
-/* ===============================
-   ACCOUNT BOX
-================================ */
-.account-box {
-  margin-top: 24px;
-  background: #e6f5f7;
-  padding: 16px;
-}
-
-.account-box h4 {
-  margin-bottom: 8px;
-}
-
-/* ===============================
-   ALERT & THANK YOU
-================================ */
-.alert-box,
-.thankyou-box {
-  background: #fff;
-  padding: 32px;
-  border-radius: 10px;
+.ngo-qr-section {
   text-align: center;
 }
+.ngo-qr-section img {
+  width: 180px;
+  max-width: 100%;
+}
+
+/* FORM */
+.ngo-form {
+  display: block;
+}
+.ngo-input,
+.ngo-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.ngo-textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* UPLOAD */
+.ngo-upload-label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.ngo-file-input {
+  display: block;
+  margin-top: 6px;
+}
 
 /* ===============================
-   RESPONSIVE
+   INPUT VISIBILITY FIX (FINAL)
 ================================ */
-/* @media (max-width: 768px) {
-  .donate-content {
-    grid-template-columns: 1fr;
-  }
 
-  .row {
-    grid-template-columns: 1fr;
-  }
+/* Force text color */
+.ngo-popup input,
+.ngo-popup textarea {
+  color: #000 !important;          /* 🔥 make typed text visible */
+  background-color: #fff !important;
+  caret-color: #000 !important;    /* 🔥 cursor visible */
+}
 
-  .captcha-row {
-    white-space: normal;
-  }
-} */
- /* ===============================
-   MOBILE FIX – CLOSE & QR
+/* Placeholder style */
+.ngo-popup input::placeholder,
+.ngo-popup textarea::placeholder {
+  color: #999 !important;
+  opacity: 1;
+}
+
+/* Remove global invalid red border */
+.ngo-popup input:invalid,
+.ngo-popup textarea:invalid {
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #ccc !important;
+}
+
+/* On focus */
+.ngo-popup input:focus,
+.ngo-popup textarea:focus {
+  border-color: #0a9f00 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 1px rgba(10,159,0,0.3);
+}
+
+
+/* SUBMIT */
+.ngo-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: orange;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* ===============================
+   STICKY SUBMIT BUTTON FIX
 ================================ */
+
+/* Make popup body scrollable but safe */
+.ngo-popup-body {
+  padding-bottom: 90px; 
+}
+ submit button */
+.ngo-submit-btn {
+  bottom: 10px;                /* safe gap */
+  z-index: 10;
+
+  margin-top: 15px;
+  margin-bottom: 0;
+
+  width: 100%;
+}
+
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-
-  /* Popup container */
-  .donate-popup {
-    width: 95%;
-    max-height: 90vh;           /* 🔥 prevent overflow */
-    overflow-y: auto;           /* 🔥 scroll inside popup */
-    padding: 20px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  /* 🔥 CLOSE BUTTON FIX */
-  .close-btn {
-    position: fixed;            /* 🔥 always visible */
-    top: 12px;
-    right: 12px;
-    z-index: 9999;
-    background: #fff;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 22px;
-    line-height: 36px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-
-  /* Stack form fields */
-  .row,
-  .donate-content,
-  .form-row {
-    display: grid;
+  .ngo-top-section {
     grid-template-columns: 1fr;
-    gap: 12px;
   }
-
-  /* Captcha fix */
-  .captcha,
-  .captcha-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .captcha input {
-    width: 100%;
-  }
-
-  /* Pay button full width */
-  .pay-btn {
-    width: 100%;
-  }
-
-  /* 🔥 QR SCANNER FIX */
-  .upi-box,
-  .qr-box {
-    display: block;
-    text-align: center;
-    margin: 20px auto 10px;
-  }
-
-  .upi-box img,
-  .qr-box img {
-    width: 150px;               /* 🔥 visible on mobile */
-    height: auto;
-    display: block;
-    margin: auto;
-  }
-
-  /* Prevent WhatsApp overlap */
-  .whatsapp-float {
-    bottom: 90px !important;
+  .ngo-qr-section img {
+    width: 150px;
   }
 }
 
@@ -1191,7 +1073,7 @@ button:hover {
 }
 .actions-section h2 {
   font-size: 60px;
-  font-weight: 400;
+  font-weight: 600;
   
 }
 .actions-section p{
@@ -1511,6 +1393,9 @@ footer section */
 .copyright span {
   color: #fbb034;
   font-weight: bold;
+}
+.copyright #ephorsys{
+  text-decoration: none;
 }
 
 /* Responsive */

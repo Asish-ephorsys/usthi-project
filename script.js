@@ -1,82 +1,32 @@
+document.addEventListener("DOMContentLoaded", function () {
 
-const donateBtn = document.getElementById("ngoDonateBtn");
-const donateOverlay = document.getElementById("ngoDonateOverlay");
-const closeDonate = document.getElementById("ngoCloseDonate");
+  const donateBtn = document.getElementById("ngoDonateBtn");
+  const popup = document.getElementById("ngoDonatePopup");
+  const overlay = document.getElementById("ngoOverlay");
+  const closeBtn = document.getElementById("ngoCloseBtn");
+  const form = document.getElementById("ngoDonationForm");
 
-const payBtn = document.getElementById("ngoPayBtn");
-const thankyouOverlay = document.getElementById("ngoThankyouOverlay");
-const closeThankyou = document.getElementById("ngoCloseThankyou");
+  donateBtn.addEventListener("click", function () {
+    popup.style.display = "block";
+    overlay.style.display = "block";
+  });
 
-const alertOverlay = document.getElementById("ngoCaptchaAlert");
-const closeAlert = document.getElementById("ngoCloseAlert");
+  function closePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+  }
 
-const captchaQ = document.getElementById("ngoCaptchaQ");
-const captchaInput = document.getElementById("ngoCaptchaInput");
+  closeBtn.addEventListener("click", closePopup);
+  overlay.addEventListener("click", closePopup);
 
-const fullName = document.getElementById("ngoFullName");
-const phone = document.getElementById("ngoPhone");
-const address = document.getElementById("ngoAddress");
-const terms = document.getElementById("ngoTerms");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Thank you! Your donation details have been submitted.");
+    closePopup();
+  });
 
-const customAmount = document.getElementById("ngoCustomAmount");
-const customRadio = document.getElementById("ngoCustomRadio");
-
-let captchaAnswer = 0;
-
-function generateCaptcha() {
-  const a = Math.floor(Math.random() * 9) + 1;
-  const b = Math.floor(Math.random() * 9) + 1;
-  captchaAnswer = a + b;
-  captchaQ.textContent = `${a} + ${b} =`;
-  captchaInput.value = "";
-}
-
-donateBtn.onclick = e => {
-  e.preventDefault();
-  generateCaptcha();
-  donateOverlay.style.display = "flex";
-};
-
-closeDonate.onclick = () => donateOverlay.style.display = "none";
-closeAlert.onclick = () => alertOverlay.style.display = "none";
-closeThankyou.onclick = () => thankyouOverlay.style.display = "none";
-
-customAmount.addEventListener("focus", () => {
-  customRadio.checked = true;
 });
 
-payBtn.onclick = () => {
-  if (!fullName.value || !phone.value || !address.value || !terms.checked) {
-    alert("Please fill all required fields");
-    return;
-  }
-
-  if (parseInt(captchaInput.value) !== captchaAnswer) {
-    alertOverlay.style.display = "flex";
-    generateCaptcha();
-    return;
-  }
-
-  const selected = document.querySelector("input[name='ngoAmount']:checked");
-  let amount = selected.value === "custom" ? customAmount.value : selected.value;
-
-  if (!amount || amount <= 0) {
-    alert("Please enter a valid amount");
-    return;
-  }
-
-  new Razorpay({
-    key: "rzp_test_1234567890",
-    amount: amount * 100,
-    currency: "INR",
-    name: "USTHI FOUNDATION",
-    description: "Donation",
-    handler: () => {
-      donateOverlay.style.display = "none";
-      thankyouOverlay.style.display = "flex";
-    }
-  }).open();
-};
 
 
 
@@ -180,6 +130,121 @@ testimonials.forEach((_, index) => {
 
 // Initial load
 loadTestimonial(currentIndex);
+
+
+
+
+// get in touch api
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-content form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fullName = form.querySelector('input[placeholder="Full Name"]').value.trim();
+    const email = form.querySelector('input[placeholder="Email Address"]').value.trim();
+    const mobile = form.querySelector('input[placeholder="Mobile no"]').value.trim();
+    const message = form.querySelector('textarea[placeholder="Your Message"]').value.trim();
+
+    if (!fullName || !email || !mobile || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const data = {
+      fullName,
+      email,
+      mobile,
+      message,
+    };
+
+    try {
+      const response = await fetch("https://your-api-url.com/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Server error. Please try later.");
+    }
+  });
+});
+
+
+
+
+// donate button api call
+document.addEventListener("DOMContentLoaded", () => {
+  const donateBtn = document.getElementById("ngoDonateBtn");
+  const popup = document.getElementById("ngoDonatePopup");
+  const overlay = document.getElementById("ngoOverlay");
+  const closeBtn = document.getElementById("ngoCloseBtn");
+  const form = document.getElementById("ngoDonationForm");
+
+  // ===== OPEN POPUP =====
+  donateBtn.addEventListener("click", () => {
+    popup.style.display = "block";
+    overlay.style.display = "block";
+    document.body.style.overflow = "hidden";
+  });
+
+  // ===== CLOSE POPUP =====
+  function closePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  closeBtn.addEventListener("click", closePopup);
+  overlay.addEventListener("click", closePopup);
+
+  // ===== FORM SUBMIT =====
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector('input[placeholder="Full Name*"]').value.trim();
+    const phone = form.querySelector('input[placeholder="Phone Number*"]').value.trim();
+    const utr = form.querySelector('input[placeholder="UTR / Transaction ID*"]').value.trim();
+    const screenshot = form.querySelector(".ngo-file-input").files[0];
+
+    if (!name || !phone || !utr || !screenshot) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("utr", utr);
+    formData.append("screenshot", screenshot);
+
+    try {
+      const response = await fetch("https://your-api-url.com/donation", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert("Thank you! Donation details submitted successfully.");
+        form.reset();
+        closePopup();
+      } else {
+        alert("Failed to submit donation details.");
+      }
+    } catch (error) {
+      alert("Server error. Please try again later.");
+    }
+  });
+});
 
 
 

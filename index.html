@@ -30,108 +30,84 @@
     <a href="/contact us/contact.html">CONTACT</a>
   </nav>
 
+
+
+  
+
 <!-- donate button -->
-<div class="nav-right">
+<!-- <div class="nav-right">
   <a href="#donate.html" id="ngoDonateBtn" class="donate-btn">Donate ❤️</a>
-</div>
+</div> -->
 
     <!-- donate popup -->
  <!-- DONATE POPUP -->
-<div class="ngo-donate-overlay" id="ngoDonateOverlay">
-  <div class="donate-container">
+  
+<!-- ================= NAVBAR DONATE BUTTON ================= -->
 
-    <span class="ngo-close-btn" id="ngoCloseDonate">&times;</span>
+<!-- ===== NAVBAR DONATE BUTTON ===== -->
+<div class="nav-right">
+  <a href="javascript:void(0)" id="ngoDonateBtn" class="ngo-donate-btn">
+    Donate ❤️
+  </a>
+</div>
 
-    <!-- <h2>Lives Will Flourish When Your Love Flows.</h2> -->
-    <!-- <p class="subtitle">Be a cause for Social Welfare. Donate your part.</p> -->
+<!-- ===== OVERLAY ===== -->
+<div class="ngo-overlay" id="ngoOverlay"></div>
 
-    <div class="amount-row">
-      <label><input type="radio" name="ngoAmount" value="1000" checked> ₹1000</label>
-      <label><input type="radio" name="ngoAmount" value="3000"> ₹3000</label>
-      <label><input type="radio" name="ngoAmount" value="5000"> ₹5000</label>
-      <label><input type="radio" name="ngoAmount" value="custom" id="ngoCustomRadio"> Other</label>
-      <input type="number" id="ngoCustomAmount" placeholder="Amount">
-    </div>
+<!-- ===== POPUP ===== -->
+<div class="ngo-popup" id="ngoDonatePopup">
 
-    
-     
+  <!-- HEADER -->
+  <div class="ngo-popup-header">
+    <h3>Donate via Bank / UPI</h3>
+    <button class="ngo-close-btn" id="ngoCloseBtn">×</button>
+  </div>
 
-    <div class="donate-content">
+  <!-- BODY -->
+  <div class="ngo-popup-body">
 
-      <div class="donate-form">
-        <div class="row">
-          <input id="ngoFullName" type="text" placeholder="Full Name*" autocomplete="off">
-          <input id="ngoPhone" type="tel" placeholder="Phone Number*" autocomplete="off">
-        </div>
+    <!-- TOP SECTION -->
+    <div class="ngo-top-section">
 
-        <textarea id="ngoAddress" rows="3" placeholder="Address*" spellcheck="false"></textarea>
-
-        <!-- CAPTCHA -->
-        <div class="captcha-row">
-          <span>Are you a Human?</span>
-          <strong id="ngoCaptchaQ"></strong>
-          <input
-            id="ngoCaptchaInput"
-            type="text"
-            placeholder="Answer"
-            autocomplete="off"
-            spellcheck="false"
-          >
-        </div>
-
-        <div class="terms-row">
-          <input id="ngoTerms" type="checkbox">
-          <span>
-            I agree to
-            <a href="#">Terms of Service</a> &
-            <a href="#">Privacy Policy</a>
-          </span>
-        </div>
-
-        <button id="ngoPayBtn" type="button" class="pay-btn">
-          PROCEED TO PAY
-        </button>
-
+      <!-- BANK DETAILS -->
+      <div class="ngo-bank-details">
+        <h4>Bank Details</h4>
+        <p><strong>Name:</strong> USTHI FOUNDATION</p>
+        <p><strong>Bank:</strong> SBI</p>
+        <p><strong>Branch:</strong> Bhubaneswar</p>
+        <p><strong>A/C No:</strong> 0000000000</p>
+        <p><strong>IFSC:</strong> SBIN000000</p>
       </div>
 
-      <!-- <div class="donate-qr">
-        <img src="images/upi-qr.png" alt="UPI QR">
-      </div> -->
+      <!-- QR -->
+      <div class="ngo-qr-section">
+        <h4>Scan & Pay</h4>
+        <img src="/image/qr img donate.jpeg" alt="UPI QR Code">
+      </div>
 
     </div>
 
-   <!-- <div class="account-box">
-      <h4>Account Details</h4>
-      <p>Name:Usthi foundation</p>
-      <p>Bank: SBI</p>
-      <p>Branch: Bhubaneswar</p>
-      <p>A/C No: 000000</p>
-      <p>IFSC: SBI00000</p>
-    </div> -->
+    <!-- FORM -->
+    <form id="ngoDonationForm" class="ngo-form">
+
+      <input type="text" class="ngo-input" placeholder="Full Name*" required>
+      <input type="tel" class="ngo-input" placeholder="Phone Number*" required>
+      <input type="text" class="ngo-input" placeholder="UTR / Transaction ID*" required>
+
+      <label class="ngo-upload-label">
+        Upload Payment Screenshot*
+        <input type="file" class="ngo-file-input" accept="image/*" required>
+      </label>
+
+      <button type="submit" class="ngo-submit-btn">
+        SUBMIT DONATION DETAILS
+      </button>
+
+    </form>
 
   </div>
 </div>
 
-<!-- WRONG CAPTCHA -->
-<div class="ngo-alert-overlay" id="ngoCaptchaAlert">
-  <div class="alert-box">
-    <h3>❌ Wrong Answer</h3>
-    <p>Please enter the correct captcha.</p>
-    <button id="ngoCloseAlert" class="pay-btn">OK</button>
-  </div>
-</div>
-
-<!-- THANK YOU -->
-<div class="ngo-thankyou-overlay" id="ngoThankyouOverlay">
-  <div class="thankyou-box">
-    <h2>🙏 Thank You!</h2>
-    <p>Your donation was successful.</p>
-    <button id="ngoCloseThankyou" class="pay-btn">Close</button>
-  </div>
-</div>
-
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-     
      
      
 
@@ -174,7 +150,7 @@
   </section>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/9861495200" target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
   </a>
 <!-- 
@@ -189,7 +165,7 @@ Together section -->
 
       <!-- BADGE -->
       <div class="badge">
-        India's <strong>2.27M+</strong><br>
+        India's <strong>2M+</strong><br>
         Children Need<br>School.
       </div>
     </div>
@@ -199,38 +175,37 @@ Together section -->
       <p class="subtitle">Together For Change</p>
 
       <h1>
-        Help the Underprivileged <br>
-        with your priceless <br>
-        Contributions
+        Your small act of kindness can bring hope <br>
+         
+         to those who need it most.
       </h1>
 
       <p class="description">
-        We create change that truly matters. Together, we can turn compassion
-        into action and uplift lives in need.
+      Your kindness, no matter how small, can restore hope where it’s needed most.
       </p>
 
       <div class="highlight">
-        ✔ Contributed to the funding of <span>1000+</span> projects in
-        <span>15</span> countries benefiting more than <span>4.2M</span> people.
+        ✔ Contributed to the funding of <span>100+</span> projects in
+        <span>5</span> countries benefiting more than <span>2M</span> people.
       </div>
 
       <!-- INFO BOX -->
       <div class="info-box">
         <div>
-          <h4>Trusted Organization</h4>
-          <p>We help companies develop powerful corporate social.</p>
+          <h4>Trusted & Transparent NGO</h4>
+          <p>We uplift underprivileged children through education, care, hope, and impact.</p>
         </div>
         <div class="divider"></div>
         <div>
-          <h4>Start Donating</h4>
-          <p>We help companies develop powerful corporate social.</p>
+          <h4>Make a Difference Today</h4>
+          <p>Your support creates real change in a child’s life.</p>
         </div>
       </div>
 
       <!-- CALL -->
       <div class="call">
        
-          <a href="tel:+90000000000"> <i class="fa-solid fa-phone"></i> +91-000-00000</a>
+          <a href="tel:+9861495200"> <i class="fa-solid fa-phone"></i> +91-986-149-5200</a>
     
 
       </div>
@@ -243,7 +218,7 @@ Together section -->
 <section id="what-we-do-section" class="what-we-do">
     <div class="section-title">
         <span>◆ What We Do ◆</span>
-        <h2>Turning Compassion Into Lasting Impact</h2>
+        <h2>Converting kindness into long-term positive impact.</h2>
     </div>
 
     <div class="cards-container">
@@ -254,8 +229,7 @@ Together section -->
             </div>
             <h3>Education</h3>
             <p>
-                Education is the light that dispels generations of darkness.
-                We nurture young minds from underprivileged communities.
+               Education lights the path forward, nurturing young minds from underprivileged communities.
             </p>
         </div>
 
@@ -265,8 +239,7 @@ Together section -->
             </div>
             <h3>Good Governance</h3>
             <p>
-                We work with communities and local institutions to strengthen
-                transparency, accountability, and citizen involvement.
+               Good governance strengthens communities through transparency, accountability, and citizen participation.
             </p>
         </div>
 
@@ -276,8 +249,7 @@ Together section -->
             </div>
             <h3>Health</h3>
             <p>
-                Providing affordable care, preventive awareness,
-                and support to rural and marginalized communities.
+               We provide affordable healthcare, preventive awareness, and support to rural communities
             </p>
         </div>
 
@@ -307,10 +279,9 @@ Together section -->
             <div class="icon">
                 <i class="fa-solid fa-wheelchair"></i>
             </div>
-            <h3>Disability</h3>
+            <h3>Waste Management</h3>
             <p>
-                We remove social barriers and empower individuals
-                through focused rehabilitation programs.
+              Promoting hygiene and sustainability through Waste to Wealth initiatives.
             </p>
         </div>
 
@@ -318,10 +289,9 @@ Together section -->
             <div class="icon">
                 <i class="fa-solid fa-wheelchair"></i>
             </div>
-            <h3>Disability</h3>
+            <h3>Disaster Relief</h3>
             <p>
-                We remove social barriers and empower individuals
-                through focused rehabilitation programs.
+                 Responding to disasters including cyclones, earthquakes, tsunamis and COVID-19
             </p>
         </div>
 
@@ -329,10 +299,10 @@ Together section -->
             <div class="icon">
                 <i class="fa-solid fa-wheelchair"></i>
             </div>
-            <h3>Disability</h3>
+            <h3>Enviromental Conservation</h3>
             <p>
-                We remove social barriers and empower individuals
-                through focused rehabilitation programs.
+          
+               Protecting nature through tree plantation, clean energy awareness, and climate action initiatives.
             </p>
         </div>
 
@@ -359,11 +329,12 @@ Together section -->
     <div class="why-box">
         <!-- Left Content -->
         <div class="why-left">
-            <h3>Inspiring Hope with Generous Acts</h3>
+            <h3>Empowering Lives, Inspiring Hope</h3>
             <p>
-                Usthi Foundation is committed to empowering communities through initiatives.
-                We provide access to education and livelihood opportunities.
-                Join us in making a lasting difference.
+              “Usthi Foundation works at the grassroots level to empower vulnerable communities
+               through education, healthcare, and sustainable
+                livelihood initiatives, fostering opportunities for a dignified and brighter future.”
+
             </p>
 
             <div class="points">
@@ -380,7 +351,7 @@ Together section -->
             </div>
 
             <!-- Donate Button (Link) -->
-            <a href="https://example.com/donate" class="donate-btn">
+            <a href="#" class="donate-btn">
                 ❤️ Donate Now
             </a>
         </div>
@@ -412,8 +383,8 @@ get in touch -->
 
             <form>
                 <div class="input-group">
-                    <input type="text" placeholder="Full Name*" required>
-                    <input type="email" placeholder="Email Address*" required>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
                     <input type="text" placeholder="Mobile no" required>
                 </div>
 
@@ -438,9 +409,9 @@ get in touch -->
 
       <!-- Card 1 -->
       <div class="action-card">
-        <img src="/image/action image1.jpg" alt="Action Image">
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor error, eius,
-             quia amet in nam, libero eaque ad sed .</h3>
+        <img src="/image/HEALTH IMG HOME.jpeg" alt="Action Image">
+        <h3>We provide essential health checkups, early diagnosis,
+           and medical support to children and underserved communities, ensuring healthier lives and stronger futures. </h3>
 
         <div class="progress-box">
           <span>Actions</span>
@@ -450,14 +421,14 @@ get in touch -->
           <div class="progress-fill" style="width:85%"></div>
         </div>
 
-        <a href="#" class="read-btn">Read More →</a>
+        <a href="/our program/ourprogram.html" class="read-btn">Read More →</a>
       </div>
 
       <!-- Card 2 -->
       <div class="action-card">
-        <img src="/image/action image1.jpg" alt="Action Image">
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor error, eius,
-             quia amet in nam, libero eaque ad sed .</h3>
+        <img src="/image/education img home.jpeg" alt="Action Image">
+        <h3>We promote quality education by supporting schools
+          , encouraging discipline, and nurturing young minds to grow with knowledge, confidence, and opportunity.</h3>
 
         <div class="progress-box">
           <span>Actions</span>
@@ -467,14 +438,14 @@ get in touch -->
           <div class="progress-fill" style="width:75%"></div>
         </div>
 
-        <a href="#" class="read-btn">Read More →</a>
+        <a href="/our program/ourprogram.html" class="read-btn">Read More →</a>
       </div>
 
       <!-- Card 3 -->
       <div class="action-card">
-        <img src="/image/action image1.jpg" alt="Action Image">
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor error, eius,
-             quia amet in nam, libero eaque ad sed .</h3>
+        <img src="/image/waste management img.jpeg" alt="Action Image">
+        <h3>We drive environmental responsibility through waste management 
+          initiatives and awareness programs, encouraging sustainable practices for a cleaner, healthier future.</h3>
 
         <div class="progress-box">
           <span>Actions</span>
@@ -484,7 +455,7 @@ get in touch -->
           <div class="progress-fill" style="width:65%"></div>
         </div>
 
-        <a href="#" class="read-btn">Read More →</a>
+        <a href="/our program/ourprogram.html" class="read-btn">Read More →</a>
       </div>
 
     </div>
@@ -522,6 +493,7 @@ get in touch -->
 
 </section>
 
+
 <!-- footer section -->
 <footer class="footer">
   <div class="footer-container">
@@ -530,8 +502,7 @@ get in touch -->
     <div class="footer-box">
       <h3>About</h3>
       <p>
-        Usthi Foundation, the Social Organization having Regd.No. 00000000
-        and 00G (000000000) and 00A
+        Usthi Foundation India, The Social Organization 
       </p>
       <img src="/image/usthi foundation.jpeg" alt="Usthi Foundation Logo" class="footer-logo">
     </div>
@@ -552,9 +523,12 @@ get in touch -->
     <!-- Contact -->
     <div class="footer-box">
       <h3>Contact Us</h3>
-      <p><i class="fas fa-location-dot"></i> Plot No.0000, SUM, Bhubaneswar, Odisha - 751024</p>
-      <p><i class="fas fa-envelope"></i> info@usthifoundation.com</p>
-      <p><i class="fas fa-phone"></i> +91 000000000</p>
+      <p><i class="fas fa-location-dot"></i>K8/733 KALINGA NAGAR
+NEAR SUM ULTIMATE
+BHUBANESWAR,751003
+ODISHA</p>
+      <p><i class="fas fa-envelope"></i>usthifoundation@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +91 9861495200</p>
     </div>
 
     <!-- Social Links -->
@@ -563,7 +537,7 @@ get in touch -->
       <ul class="social-links">
         <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
         <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <!-- <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li> -->
         <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
         <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
       </ul>
@@ -576,7 +550,11 @@ get in touch -->
 
   <!-- Centered Copyright -->
   <p class="copyright">
-    Copyright © 2023. All Rights Reserved <span>Usthi Foundation</span>.
+    Copyright © 2017. All Rights Reserved <span>Usthi Foundation</span>.
+  </p>
+    <p class="copyright">
+      <!-- Developed By  <a href="https://www.ephorsys.com/"></a><span>Ephorsys pvt. Ltd. </span></a> -->
+      Developed By  <a href="https://www.ephorsys.com/" id="ephorsys"><span>Ephorsys pvt. Ltd. </span></a>
   </p>
 
 </footer>
