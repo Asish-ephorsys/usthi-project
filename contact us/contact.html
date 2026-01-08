@@ -28,7 +28,7 @@
   <nav class="nav-links" id="navLinks">
     <a href="/index.html">HOME</a>
     <a href="/about us/about.html">ABOUT US</a>
-    <a href="/carrier/carrier.html">CARRIER</a>
+    <a href="/carrier/carrier.html">CAREER</a>
     <a href="/our program/ourprogram.html">OUR PROGRAM</a>
     <a href="/news/news.html">NEWS</a>
     <a href="/gallery/gallery.html">GALLERY</a>
@@ -36,10 +36,86 @@
   </nav>
 
   <!-- Right Section -->
-  <div class="nav-right">
+  <!-- <div class="nav-right">
     <a href="#" id="donateBtn" class="donate-btn">
       Donate ❤️
-    </a>
+    </a> -->
+
+    
+<!-- ===== NAVBAR DONATE BUTTON ===== -->
+<div class="nav-right">
+  <a href="javascript:void(0)" id="ngoDonateBtn" class="ngo-donate-btn">
+    Donate ❤️
+  </a>
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="ngo-overlay" id="ngoOverlay"></div>
+
+<!-- ===== POPUP ===== -->
+<div class="ngo-popup" id="ngoDonatePopup">
+
+  <!-- HEADER -->
+  <div class="ngo-popup-header">
+    <h3>Donate via Bank / UPI</h3>
+    <button class="ngo-close-btn" id="ngoCloseBtn">×</button>
+  </div>
+
+  <!-- BODY -->
+  <div class="ngo-popup-body">
+
+    <!-- TOP SECTION -->
+    <div class="ngo-top-section">
+
+      <!-- BANK DETAILS -->
+      <div class="ngo-bank-details">
+        <h4>Bank Details</h4>
+        <p><strong>Name:</strong> USTHI FOUNDATION</p>
+        <p><strong>Bank:</strong> SBI</p>
+        <p><strong>Branch:</strong> Bhubaneswar</p>
+        <p><strong>A/C No:</strong> 0000000000</p>
+        <p><strong>IFSC:</strong> SBIN000000</p>
+      </div>
+
+      <!-- QR -->
+      <div class="ngo-qr-section">
+        <h4>Scan & Pay</h4>
+        <img src="/image/qr img donate.jpeg" alt="UPI QR Code">
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <form id="ngoDonationForm" class="ngo-form">
+
+      <input type="text" class="ngo-input" placeholder="Full Name*" required>
+      <input type="tel" class="ngo-input" placeholder="Phone Number*" required>
+      <input type="text" class="ngo-input" placeholder="UTR / Transaction ID*" required>
+      <input type="text" class="ngo-input" placeholder="Pan">
+      <textarea  class="ngo-input" placeholder="Type Your Message"  required></textarea>
+      
+
+      <label class="ngo-upload-label">
+        Upload Payment Screenshot*
+        <input type="file" class="ngo-file-input" accept="image/*" required>
+      </label>
+
+      <button type="submit" class="ngo-submit-btn">
+        SUBMIT DONATION DETAILS
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+     
+     
+
+<!-- DONATE POPUP  end -->
+
+     
+
 
     <!-- Toggle Button -->
     <div class="menu-toggle" id="menuToggle">
@@ -89,11 +165,11 @@
             <!-- <p>usthi foundation<br>Bhubaneswar</p> -->
              <p>Usthi Foundation India
               <br>
-              K8/733 Kalinga Nagar
+              MIG-K8/733 Kalinga Nagar
               ,Near Sum Ultimate
     
               <br>
-              BHUBANESWAR,751003
+              Bhubaneswar,751003
 
                     </p>
         </div>
@@ -102,12 +178,15 @@
             <div class="icon">📞</div>
             <h4>Phone</h4>
             <p>+91 9861495200</p>
+            <p>+91 9437056711</p>
+            
         </div>
 
         <div class="info-card">
             <div class="icon">✉️</div>
             <h4>Mail</h4>
             <p>usthifoundation@gmail.com</p>
+             <p>rbarik_usthi@rediff.mail</p>
         </div>
 
     </div>
@@ -162,7 +241,7 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="/about us/about.html">About Us</a></li>
-        <li><a href="/carrier/carrier.html">Carrier</a></li>
+        <li><a href="/carrier/carrier.html">Career</a></li>
         <li><a href="/our program/ourprogram.html">Our program</a></li>
         <li><a href="/news/news.html">News</a></li>
         <li><a href="/gallery/gallery.html">Gallery</a></li>
@@ -173,12 +252,13 @@
     <!-- Contact -->
     <div class="footer-box">
       <h3>Contact Us</h3>
-      <p><i class="fas fa-location-dot"></i>K8/733 KALINGA NAGAR
+      <p><i class="fas fa-location-dot"></i>MIG-K8/733 KALINGA NAGAR
 NEAR SUM ULTIMATE
 BHUBANESWAR,751003
 ODISHA</p>
       <p><i class="fas fa-envelope"></i>usthifoundation@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 9861495200</p>
+       <p><i class="fas fa-phone"></i> +91 9861495200 / 9437056711</p>
+    
     </div>
 
     <!-- Social Links -->

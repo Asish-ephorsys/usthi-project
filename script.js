@@ -183,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // donate button api call
+
 document.addEventListener("DOMContentLoaded", () => {
   const donateBtn = document.getElementById("ngoDonateBtn");
   const popup = document.getElementById("ngoDonatePopup");
@@ -214,10 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = form.querySelector('input[placeholder="Full Name*"]').value.trim();
     const phone = form.querySelector('input[placeholder="Phone Number*"]').value.trim();
     const utr = form.querySelector('input[placeholder="UTR / Transaction ID*"]').value.trim();
+    const pan = form.querySelector('input[placeholder="Pan"]').value.trim();
+    const message = form.querySelector('textarea[placeholder="Type Your Message"]').value.trim();
     const screenshot = form.querySelector(".ngo-file-input").files[0];
 
-    if (!name || !phone || !utr || !screenshot) {
+    if (!name || !phone || !utr || !message || !screenshot) {
       alert("Please fill all required fields.");
+      return;
+    }
+
+    // Optional PAN format validation
+    if (pan && !/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/i.test(pan)) {
+      alert("Please enter a valid PAN number.");
       return;
     }
 
@@ -225,6 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("name", name);
     formData.append("phone", phone);
     formData.append("utr", utr);
+    formData.append("pan", pan);
+    formData.append("message", message);
     formData.append("screenshot", screenshot);
 
     try {
@@ -234,18 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        alert("Thank you! Donation details submitted successfully.");
+        alert("Thank you! Your donation details have been submitted successfully.");
         form.reset();
         closePopup();
       } else {
-        alert("Failed to submit donation details.");
+        alert("Submission failed. Please try again.");
       }
     } catch (error) {
       alert("Server error. Please try again later.");
     }
   });
 });
-
-
-
-

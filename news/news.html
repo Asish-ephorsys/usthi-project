@@ -24,11 +24,16 @@
     <img src="/image/usthi foundation.jpeg" alt="Logo">
   </a>
 
+
+ 
+
+
+
   <!-- Navigation Links -->
   <nav class="nav-links" id="navLinks">
     <a href="/index.html" >HOME</a>
     <a href="/about us/about.html">ABOUT US</a>
-    <a href="/carrier/carrier.html">CARRIER</a>
+    <a href="/carrier/carrier.html">CAREER</a>
     <a href="/our program/ourprogram.html">OUR PROGRAM</a>
     <a href="/news/news.html"class="active">NEWS</a>
     <a href="/gallery/gallery.html">GALLERY</a>
@@ -36,10 +41,83 @@
   </nav>
 
   <!-- Right Section -->
-  <div class="nav-right">
+  <!-- <div class="nav-right">
     <a href="#" id="donateBtn" class="donate-btn">
       Donate ❤️
-    </a>
+    </a> -->
+    <!-- ===== NAVBAR DONATE BUTTON ===== -->
+<div class="nav-right">
+  <a href="javascript:void(0)" id="ngoDonateBtn" class="ngo-donate-btn">
+    Donate ❤️
+  </a>
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="ngo-overlay" id="ngoOverlay"></div>
+
+<!-- ===== POPUP ===== -->
+<div class="ngo-popup" id="ngoDonatePopup">
+
+  <!-- HEADER -->
+  <div class="ngo-popup-header">
+    <h3>Donate via Bank / UPI</h3>
+    <button class="ngo-close-btn" id="ngoCloseBtn">×</button>
+  </div>
+
+  <!-- BODY -->
+  <div class="ngo-popup-body">
+
+    <!-- TOP SECTION -->
+    <div class="ngo-top-section">
+
+      <!-- BANK DETAILS -->
+      <div class="ngo-bank-details">
+        <h4>Bank Details</h4>
+        <p><strong>Name:</strong> USTHI FOUNDATION</p>
+        <p><strong>Bank:</strong> SBI</p>
+        <p><strong>Branch:</strong> Bhubaneswar</p>
+        <p><strong>A/C No:</strong> 0000000000</p>
+        <p><strong>IFSC:</strong> SBIN000000</p>
+      </div>
+
+      <!-- QR -->
+      <div class="ngo-qr-section">
+        <h4>Scan & Pay</h4>
+        <img src="/image/qr img donate.jpeg" alt="UPI QR Code">
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <form id="ngoDonationForm" class="ngo-form">
+
+      <input type="text" class="ngo-input" placeholder="Full Name*" required>
+      <input type="tel" class="ngo-input" placeholder="Phone Number*" required>
+      <input type="text" class="ngo-input" placeholder="UTR / Transaction ID*" required>
+      <input type="text" class="ngo-input" placeholder="Pan">
+      <textarea  class="ngo-input" placeholder="Type Your Message"  required></textarea>
+      
+
+      <label class="ngo-upload-label">
+        Upload Payment Screenshot*
+        <input type="file" class="ngo-file-input" accept="image/*" required>
+      </label>
+
+      <button type="submit" class="ngo-submit-btn">
+        SUBMIT DONATION DETAILS
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+     
+     
+
+<!-- DONATE POPUP  end -->
+
+    
 
     <!-- Toggle Button -->
     <div class="menu-toggle" id="menuToggle">
@@ -90,22 +168,22 @@
       <!-- News 2 -->
       <div class="news-card dark reverse">
         <div class="news-content">
-          <h2>32nd Annual Celebration of Usti Foundation School Held at Puri</h2>
+          <h2>Discussion on Waste Management and Coastal Cleanliness</h2>
           <p>
-            The Usti Foundation School proudly celebrated its 32nd Annual Function at the sacred land of Shreekhetra, Puri. 
-            The event showcased cultural performances, student achievements, and reaffirmed our
-             commitment to quality education and holistic development.
+            The discussion focused on the importance of proper waste management and coastal cleanliness to protect the environment and ensure a sustainable future.
+             Emphasis was placed on awareness, responsibility, and collective action to preserve coastal ecosystems.
+         
 
           </p>
 
-          <a href="https://www.youtube.com/watch?v=i4xn8s_d1Kw" target="_blank" class="read-more">
+          <a href="https://www.youtube.com/watch?v=hXZASf0-M4I" target="_blank" class="read-more">
             <span>Read More</span>
             <div class="arrow-circle">→</div>
           </a>
         </div>
 
         <div class="news-image">
-          <img src="/image/32nd Annual Celebration img.png" alt="Nepal Girls" />
+          <img src="/image/new 2 img.png" alt="News 2 img" />
         </div>
       </div>
 
@@ -132,64 +210,62 @@
       <!-- News 4 -->
       <div class="news-card dark reverse">
         <div class="news-content">
-          <h2>Project Visit in Nepal</h2>
+          <h2>Efforts by Usti Foundation and Administration to Beautify Puri Pentha Kata Beach</h2>
           <p>
-            A project visit to Nepal was conducted to observe ongoing initiatives,
-             assess progress, and strengthen collaboration with local partners.
+            With the combined efforts of Usti Foundation and the administration,
+             Puri Pentha Kata Beach is being transformed into a cleaner, more attractive coastline.”
+           
 
           </p>
 
-          <a href="https://www.youtube.com/watch?v=HX_2jmB4an0" target="_blank" class="read-more">
+          <a href="https://www.youtube.com/watch?v=WEl8r55fuPk" target="_blank" class="read-more">
             <span>Read More</span>
             <div class="arrow-circle">→</div>
           </a>
         </div>
 
         <div class="news-image">
-          <img src="/image/nepal visit img.png" alt="Food Relief" />
+          <img src="/image/news 4 img.png" alt="news 4 img" />
         </div>
       </div>
       <!-- News 5 -->
       <div class="news-card light">
         <div class="news-content">
-          <h2>Sudan hunger crisis: Funding cuts threaten millions</h2>
+          <h2>USTHI Foundation School India , Puri – Science Exhibition 2025</h2>
           <p>
-            Conflict-driven malnutrition is ravaging Sudan, leaving millions at
-            risk from hunger and collapsing services. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Voluptatem ipsa mollitia obcaecati
-            aperiam sint nesciunt deserunt
+           The Science Exhibition 2025 at USTHI Foundation  India School , puri showcased students’ 
+           innovative ideas, scientific models, and creative thinking, encouraging curiosity, learning, and hands-on exploration.
           </p>
 
-          <a href="https://www.google.com" target="_blank" class="read-more">
+          <a href="https://www.youtube.com/watch?v=pOAa4aKHSvM" target="_blank" class="read-more">
             <span>Read More</span>
             <div class="arrow-circle">→</div>
           </a>
         </div>
 
         <div class="news-image">
-          <img src="/image/gallery hero section img4.jpg" alt="Sudan Crisis" />
+          <img src="/image/newss 5 img.png" alt="news 5 img" />
         </div>
       </div>
 
       <!-- News 6 -->
       <div class="news-card dark reverse">
         <div class="news-content">
-          <h2>Emergency food relief saves thousands</h2>
+          <h2>Summit on Waste Management and Marine Litter Strategies</h2>
           <p>
-            Immediate food assistance brings hope to families impacted by
-            natural disasters. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Eum consequuntur, voluptas esse deleniti qui
-            corrupti suscipit odit
+            The summit brought together stakeholders, experts, and community leaders to discuss effective waste management practices 
+            and strategic solutions to reduce marine litter, promoting cleaner oceans and sustainable environmental protection.
+       
           </p>
 
-          <a href="https://www.google.com" target="_blank" class="read-more">
+          <a href="https://odishatazanews.com/?p=171555" target="_blank" class="read-more">
             <span>Read More</span>
             <div class="arrow-circle">→</div>
           </a>
         </div>
 
         <div class="news-image">
-          <img src="/image/gallery hero section img4.jpg" alt="Food Relief" />
+          <img src="/image/waste management img.jpeg" alt="news 5 img" />
         </div>
       </div>
     </section>
@@ -214,7 +290,7 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="/about us/about.html">About Us</a></li>
-        <li><a href="/carrier/carrier.html">Carrier</a></li>
+        <li><a href="/carrier/carrier.html">Career</a></li>
         <li><a href="/our program/ourprogram.html">Our program</a></li>
         <li><a href="/news/news.html">News</a></li>
         <li><a href="/gallery/gallery.html">Gallery</a></li>
@@ -225,12 +301,13 @@
     <!-- Contact -->
     <div class="footer-box">
       <h3>Contact Us</h3>
-      <p><i class="fas fa-location-dot"></i>K8/733 KALINGA NAGAR
+      <p><i class="fas fa-location-dot"></i>MIG-K8/733 KALINGA NAGAR
 NEAR SUM ULTIMATE
 BHUBANESWAR,751003
 ODISHA</p>
       <p><i class="fas fa-envelope"></i>usthifoundation@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 9861495200</p>
+       <p><i class="fas fa-phone"></i> +91 9861495200 / 9437056711</p>
+      
     </div>
     <!-- Social Links -->
     <div class="footer-box">

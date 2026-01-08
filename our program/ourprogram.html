@@ -28,7 +28,7 @@
   <nav class="nav-links" id="navLinks">
     <a href="/index.html" >HOME</a>
     <a href="/about us/about.html">ABOUT US</a>
-    <a href="/carrier/carrier.html">CARRIER</a>
+    <a href="/carrier/carrier.html">CAREER</a>
     <a href="/our program/ourprogram.html"class="active">OUR PROGRAM</a>
     <a href="/news/news.html">NEWS</a>
     <a href="/gallery/gallery.html">GALLERY</a>
@@ -36,10 +36,83 @@
   </nav>
 
   <!-- Right Section -->
-  <div class="nav-right">
+  <!-- <div class="nav-right">
     <a href="#" id="donateBtn" class="donate-btn">
       Donate ❤️
-    </a>
+    </a> -->
+    <!-- ===== NAVBAR DONATE BUTTON ===== -->
+<div class="nav-right">
+  <a href="javascript:void(0)" id="ngoDonateBtn" class="ngo-donate-btn">
+    Donate ❤️
+  </a>
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="ngo-overlay" id="ngoOverlay"></div>
+
+<!-- ===== POPUP ===== -->
+<div class="ngo-popup" id="ngoDonatePopup">
+
+  <!-- HEADER -->
+  <div class="ngo-popup-header">
+    <h3>Donate via Bank / UPI</h3>
+    <button class="ngo-close-btn" id="ngoCloseBtn">×</button>
+  </div>
+
+  <!-- BODY -->
+  <div class="ngo-popup-body">
+
+    <!-- TOP SECTION -->
+    <div class="ngo-top-section">
+
+      <!-- BANK DETAILS -->
+      <div class="ngo-bank-details">
+        <h4>Bank Details</h4>
+        <p><strong>Name:</strong> USTHI FOUNDATION</p>
+        <p><strong>Bank:</strong> SBI</p>
+        <p><strong>Branch:</strong> Bhubaneswar</p>
+        <p><strong>A/C No:</strong> 0000000000</p>
+        <p><strong>IFSC:</strong> SBIN000000</p>
+      </div>
+
+      <!-- QR -->
+      <div class="ngo-qr-section">
+        <h4>Scan & Pay</h4>
+        <img src="/image/qr img donate.jpeg" alt="UPI QR Code">
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <form id="ngoDonationForm" class="ngo-form">
+
+      <input type="text" class="ngo-input" placeholder="Full Name*" required>
+      <input type="tel" class="ngo-input" placeholder="Phone Number*" required>
+      <input type="text" class="ngo-input" placeholder="UTR / Transaction ID*" required>
+      <input type="text" class="ngo-input" placeholder="Pan">
+      <textarea  class="ngo-input" placeholder="Type Your Message"  required></textarea>
+      
+
+      <label class="ngo-upload-label">
+        Upload Payment Screenshot*
+        <input type="file" class="ngo-file-input" accept="image/*" required>
+      </label>
+
+      <button type="submit" class="ngo-submit-btn">
+        SUBMIT DONATION DETAILS
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+     
+     
+
+<!-- DONATE POPUP  end -->
+
+     
 
     <!-- Toggle Button -->
     <div class="menu-toggle" id="menuToggle">
@@ -73,11 +146,12 @@
       <div class="program-card">
         <img src="/image/education img about us.jpeg" alt="img" />
         <div class="program-content">
-          <h2>Education for All</h2>
+          <h2>Usthi Foundation India , School Puri</h2>
           <p class="short-text">
-              We provide free and quality education to underprivileged children,
-  helping them gain knowledge, confidence, and equal opportunities
-  for a better future.
+            To address rural poverty and reduce migration to Kolkata, Usthi Foundation established the Ananda Education Centre in Udarhat in 1987. What began with 90 students has grown into a nurturing space for over 
+            200 underprivileged children, offering education from kindergarten to Class VIII and support up to Class X.
+            
+     
 
           </p>
           <p class="more-text">
@@ -96,19 +170,18 @@
       <div class="program-card reverse">
         <img src="/image/health img about us.jpeg" alt="img" />
         <div class="program-content">
-          <h2>Health & Medical Care</h2>
+          <h2>Anada School ,Kolkata</h2>
           <p class="short-text">
-              We organize free medical camps and spread health awareness to ensure
-  early diagnosis, preventive care, and healthier lives for underserved
-  communities.
-
+            To address rural poverty and reduce migration to Kolkata, Usthi Foundation established the Ananda Education Centre in Udarhat in 1987. What began with 90 students has grown into a nurturing space for
+             over 200 underprivileged children, offering education from kindergarten to Class VIII and support up to Class X.
+   
           </p>
           <p class="more-text">
-              Our health program provides free checkups, essential medicines,
-  hygiene education, and basic medical support in rural and marginalized
-  areas. We focus on preventive healthcare, maternal and child health,
-  nutrition awareness, and regular follow-ups to improve overall
-  well-being and quality of life.
+            Understanding the region’s nutritional challenges, the school provides daily balanced meals to ensure healthy growth
+             and better learning outcomes. The green campus promotes sustainable farming, generating resources that help support students’ nutrition while fostering environmental responsibility.
+
+With major renovations in 2012, the introduction of an IT-enabled learning environment, and advanced teacher training programs in 2014, Ananda Education Centre continues to empower children with quality education and hope for a better future.
+  
 
           </p>
           <button class="toggle-btn">Show More</button>
@@ -119,7 +192,7 @@
       <div class="program-card">
         <img src="/image/action image1.jpg" alt="img" />
         <div class="program-content">
-          <h2>Women Empowerment</h2>
+          <h2>Waste Management</h2>
           <p class="short-text">
               We empower women through skill development, confidence building,
   and awareness programs that help them become self-reliant and
@@ -142,7 +215,7 @@
       <div class="program-card reverse">
         <img src="/image/enviroment img about us.jpeg" alt="img" />
         <div class="program-content">
-          <h2>Environmental Care</h2>
+          <h2>Usthi Hospital</h2>
           <p class="short-text">
               We work to protect nature through community-driven environmental
   initiatives that promote cleanliness, sustainability, and
@@ -166,7 +239,7 @@
       <div class="program-card">
         <img src="/image/action image1.jpg" alt="img" />
         <div class="program-content">
-          <h2>Food Distribution</h2>
+          <h2>Relief Work , Puri </h2>
           <p class="short-text">
               We provide nutritious meals to the hungry and needy, ensuring that
   no one sleeps hungry due to poverty or crisis.
@@ -625,7 +698,7 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="/about us/about.html">About Us</a></li>
-        <li><a href="/carrier/carrier.html">Carrier</a></li>
+        <li><a href="/carrier/carrier.html">Career</a></li>
         <li><a href="/our program/ourprogram.html">Our program</a></li>
         <li><a href="/news/news.html">News</a></li>
         <li><a href="/gallery/gallery.html">Gallery</a></li>
@@ -636,12 +709,13 @@
     <!-- Contact -->
     <div class="footer-box">
       <h3>Contact Us</h3>
-      <p><i class="fas fa-location-dot"></i>K8/733 KALINGA NAGAR
+      <p><i class="fas fa-location-dot"></i>MIG-K8/733 KALINGA NAGAR
 NEAR SUM ULTIMATE
 BHUBANESWAR,751003
 ODISHA</p>
       <p><i class="fas fa-envelope"></i>usthifoundation@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 9861495200</p>
+       <p><i class="fas fa-phone"></i> +91 9861495200 / 9437056711</p>
+    
     </div>
 
     <!-- Social Links -->

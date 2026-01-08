@@ -26,7 +26,7 @@
   <nav class="nav-links" id="navLinks">
     <a href="/index.html" >HOME</a>
     <a href="/about us/about.html"class="active">ABOUT US</a>
-    <a href="/carrier/carrier.html">CARRIER</a>
+    <a href="/carrier/carrier.html">CAREER</a>
     <a href="/our program/ourprogram.html">OUR PROGRAM</a>
     <a href="/news/news.html">NEWS</a>
     <a href="/gallery/gallery.html">GALLERY</a>
@@ -34,10 +34,84 @@
   </nav>
 
   <!-- Right Section -->
-  <div class="nav-right">
+  <!-- <div class="nav-right">
     <a href="#" id="donateBtn" class="donate-btn">
       Donate ❤️
-    </a>
+    </a> -->
+
+    
+<!-- ===== NAVBAR DONATE BUTTON ===== -->
+<div class="nav-right">
+  <a href="javascript:void(0)" id="ngoDonateBtn" class="ngo-donate-btn">
+    Donate ❤️
+  </a>
+</div>
+
+<!-- ===== OVERLAY ===== -->
+<div class="ngo-overlay" id="ngoOverlay"></div>
+
+<!-- ===== POPUP ===== -->
+<div class="ngo-popup" id="ngoDonatePopup">
+
+  <!-- HEADER -->
+  <div class="ngo-popup-header">
+    <h3>Donate via Bank / UPI</h3>
+    <button class="ngo-close-btn" id="ngoCloseBtn">×</button>
+  </div>
+
+  <!-- BODY -->
+  <div class="ngo-popup-body">
+
+    <!-- TOP SECTION -->
+    <div class="ngo-top-section">
+
+      <!-- BANK DETAILS -->
+      <div class="ngo-bank-details">
+        <h4>Bank Details</h4>
+        <p><strong>Name:</strong> USTHI FOUNDATION</p>
+        <p><strong>Bank:</strong> SBI</p>
+        <p><strong>Branch:</strong> Bhubaneswar</p>
+        <p><strong>A/C No:</strong> 0000000000</p>
+        <p><strong>IFSC:</strong> SBIN000000</p>
+      </div>
+
+      <!-- QR -->
+      <div class="ngo-qr-section">
+        <h4>Scan & Pay</h4>
+        <img src="/image/qr img donate.jpeg" alt="UPI QR Code">
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <form id="ngoDonationForm" class="ngo-form">
+
+      <input type="text" class="ngo-input" placeholder="Full Name*" required>
+      <input type="tel" class="ngo-input" placeholder="Phone Number*" required>
+      <input type="text" class="ngo-input" placeholder="UTR / Transaction ID*" required>
+      <input type="text" class="ngo-input" placeholder="Pan">
+      <textarea  class="ngo-input" placeholder="Type Your Message"  required></textarea>
+      
+
+      <label class="ngo-upload-label">
+        Upload Payment Screenshot*
+        <input type="file" class="ngo-file-input" accept="image/*" required>
+      </label>
+
+      <button type="submit" class="ngo-submit-btn">
+        SUBMIT DONATION DETAILS
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+     
+     
+
+<!-- DONATE POPUP  end -->
+
 
     <!-- Toggle Button -->
     <div class="menu-toggle" id="menuToggle">
@@ -100,128 +174,75 @@ We believe that compassion, collective action, and commitment can transform live
   </a>
 
 
-  <!-- about us section -->
-   <section class="about-section">
-    <div class="about-container">
 
-        <!-- Left Content -->
-        <div class="about-text">
-            <span class="line"><h2>Education</h2></span>
-            
 
-            <p class="quote">
-                “Education does not transform the World. Education changes people.
-                People change the World.” <br>– Paulo Freire
-            </p>
+<!-- below founder section  -->
 
-            <!-- Hidden Text -->
-            <div class="more-text" id="moreText">
-                <p>
-                  We provide free and quality education to 
-                  underprivileged children, helping them gain knowledge, confidence, and equal opportunities for a better future.
  
-                </p>
-                <p>
-                  Our education program supports children with books, school supplies, trained teachers, digital learning tools, and personal mentorship. We focus on holistic
-                   development by nurturing creativity, discipline, and life skills so every child can grow, learn, and become self-reliant and empowered.
-                  
-                </p>
-            </div>
+<section class="focus-wrapper">
 
-            <button class="show-btn" id="showBtn">
-                Show More ❤️
-            </button>
-        </div>
+  <!-- SECTION HEADING -->
+  <div class="section-header">
+    <h1>Our Focus Areas</h1>
+    <p>
+      We work across essential sectors to create sustainable impact,
+      empower communities, and improve quality of life.
+    </p>
+  </div>
 
-        <!-- Right Image -->
-        <div class="about-image">
-            <img src="/image/education img about us.jpeg" alt="Education Image">
-        </div>
+  <!-- CONTENT -->
+  <div class="focus-section">
 
+    <!-- EDUCATION -->
+    <div class="focus-card">
+      <div class="focus-image">
+        <img src="/image/education about us img100.jpeg" alt="Education Program">
+      </div>
+      <div class="focus-content">
+        <h2>Education</h2>
+        <p>
+          Education is the foundation of a brighter future. We support children
+          and youth through quality learning, school assistance, and skill
+          development to break the cycle of poverty.
+        </p>
+      </div>
     </div>
-</section>
-<!-- 
-animal care section -->
-<section class="animal-care">
-  <div class="container">
 
-    <!-- Left Image -->
-    <div class="image-box">
-      <img src="/image/enviroment img about us.jpeg" alt="Animal Care">
+    <!-- HEALTH -->
+    <div class="focus-card reverse">
+      <div class="focus-image">
+        <img src="/image/health img about us.jpeg" alt="Health Program">
+      </div>
+      <div class="focus-content">
+        <h2>Health</h2>
+        <p>
+          Good health is a basic human right. We improve community well-being
+          through medical camps, preventive care awareness, nutrition support,
+          and accessible healthcare services.
+        </p>
+      </div>
     </div>
 
-    <!-- Right Content -->
-    <div class="content-box">
-      <span class="line"><h2>Environment</h2></span>
-      
-
-      <p id="text">
-            Nature may not speak, but its signs are clear when we choose to listen.
-    By caring for our environment, we take responsibility to protect
-    ecosystems, preserve resources, and safeguard the planet for future
-    generations.
-
-        <span id="more-text2">
-               Through tree plantation drives, cleanliness campaigns, waste
-      management awareness, and sustainable practices, we work to build
-      greener and healthier communities. Every small action counts, and
-      collective effort can create lasting environmental change.
-
-  
-        </span>
-        <br><br>
-        <strong>– Care for Nature, Care for Life</strong>
-      </p>
-
-      <button id="toggleBtn">Show More ❤️</button>
+    <!-- WASTE MANAGEMENT -->
+    <div class="focus-card">
+      <div class="focus-image">
+        <img src="/image/waste management img.jpeg" alt="Waste Management Program">
+      </div>
+      <div class="focus-content">
+        <h2>Waste Management</h2>
+        <p>
+          We promote responsible waste management through segregation,
+          recycling initiatives, and environmental awareness to build cleaner,
+          healthier, and sustainable communities.
+        </p>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- enviromental section -->
-    <section class="about-section">
-    <div class="about-container">
 
-        <!-- Left Content -->
-        <div class="about-text">
-            <span class="line"><h2>Health</h2></span>
-            
 
-            <p class="quote">
-                “Health is not just the absence of illness, but a state of complete
-  physical, mental, and social well-being.” <br>– World Health Organization
-          
-            </p>
-
-            <!-- Hidden Text -->
-            <div class="more-text3" id="moreText3">
-                <p>
-                      We work to improve community health by organizing free medical camps,
-    health awareness programs, and preventive care initiatives for
-    underprivileged populations.
-             
-                </p>
-                <p>
-                      Our focus includes maternal and child health, nutrition awareness,
-    hygiene education, and access to basic healthcare services, ensuring
-    healthier and more resilient communities.
-                 
-                </p>
-            </div>
-
-            <button class="show-btn1" id="showBtn1">
-                Show More ❤️
-            </button>
-        </div>
-
-        <!-- Right Image -->
-        <div class="about-image">
-            <img src="/image/health img about us.jpeg" alt="Education Image">
-        </div>
-
-    </div>
-</section>
 <!-- work section -->
  <section class="our-works">
 
@@ -371,7 +392,7 @@ animal care section -->
       <h3>Quick Links</h3>
       <ul>
         <li><a href="/about us/about.html">About Us</a></li>
-        <li><a href="/carrier/carrier.html">Carrier</a></li>
+        <li><a href="/carrier/carrier.html">Career</a></li>
         <li><a href="/our program/ourprogram.html">Our program</a></li>
         <li><a href="/news/news.html">News</a></li>
         <li><a href="/gallery/gallery.html">Gallery</a></li>
@@ -382,11 +403,11 @@ animal care section -->
     <!-- Contact -->
     <div class="footer-box">
       <h3>Contact Us</h3>
-      <p><i class="fas fa-location-dot"></i>K8/733 KALINGA NAGAR NEAR SUM ULTIMATE BHUBANESWAR,751003 ODISHA
+      <p><i class="fas fa-location-dot"></i>MIG-K8/733 KALINGA NAGAR NEAR SUM ULTIMATE BHUBANESWAR,751003 ODISHA
 
 </p>
       <p><i class="fas fa-envelope"></i> usthifoundation@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 9861495200</p>
+         <p><i class="fas fa-phone"></i> +91 9861495200 / 9437056711</p>
     </div>
 
     <!-- Social Links -->
