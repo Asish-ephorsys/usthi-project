@@ -1,3 +1,5 @@
+// donate button popup
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// toggle menu section
 
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");

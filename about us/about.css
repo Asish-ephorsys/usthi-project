@@ -67,21 +67,7 @@
   gap: 20px;
 }
 
-/* Donate Button */
-/* #donateBtn.donate-btn {
-  background: #0a9f00;
-  color: #fff;
-  padding: 10px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
 
-#donateBtn:hover {
-  background: #087c00;
-  transform: scale(1.05);
-} */
  
 /* Donate Button */
 #ngoDonateBtn.ngo-donate-btn {
@@ -248,11 +234,9 @@
   cursor: pointer;
 }
 
-/* ===============================
-   STICKY SUBMIT BUTTON FIX
-================================ */
 
-/* Make popup body scrollable but safe */
+
+/* Make popup body scrollable  */
 .ngo-popup-body {
   padding-bottom: 90px; 
 }
@@ -779,49 +763,6 @@ box-shadow: 0 3px 10px black ;
 }
 
 
-/* .work-section {
-  padding: 80px 20px;
-  background: #f9f9f9;
-}
-
-/* Container */
-/* .container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-/* Box */
-/* .work-box {
-  background: #ffffff;
-  padding: 40px 25px;
-  text-align: center;
-  border-radius: 10px;
-  transition: all 0.4s ease;
-  animation: fadeUp 1s ease;
-  position: relative;
-  overflow: hidden;
-} */
-
-/* Hover effect */
-/* .work-box:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-} */
-
-/* Icon */
-/* .work-box i {
-  font-size: 45px;
-  color: #ff6a00;
-  margin-bottom: 20px;
-  transition: transform 0.4s ease;
-} */
-
-/* .work-box:hover i {
-  transform: rotate(10deg) scale(1.2);
-}
 
 /* Heading */
 .work-box h3 {
@@ -830,15 +771,7 @@ box-shadow: 0 3px 10px black ;
   color: #222;
 } */
 
-/* Line */
-/* .line {
-  width: 50px;
-  height: 3px;
-  background: #ff6a00;
-  display: block;
-  margin: 15px auto;
-  transition: width 0.4s ease;
-}
+
 
 .work-box:hover .line {
   width: 80px;
@@ -851,32 +784,7 @@ box-shadow: 0 3px 10px black ;
   color: #555;
 } */
 
-/* Animation */
-/* @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
 
-/* Responsive */
-/* @media (max-width: 992px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-} */ */ */
-
-/* who we are section */
 
 
 body {

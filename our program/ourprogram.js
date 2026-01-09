@@ -1,5 +1,5 @@
 
-
+// donate button section
 document.addEventListener("DOMContentLoaded", function () {
 
   const donateBtn = document.getElementById("ngoDonateBtn");
@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // end
+
+
+// toggle button section
+
+
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
@@ -152,3 +157,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// our program api call
+document.addEventListener("DOMContentLoaded", () => {
+  fetchPrograms();
+});
+
+async function fetchPrograms() {
+  try {
+    const response = await fetch("https://your-api-url.com/programs");
+    const programs = await response.json();
+
+    const container = document.getElementById("programsContainer");
+    container.innerHTML = "";
+
+    programs.forEach((program) => {
+      const card = document.createElement("div");
+      card.className = `program-card ${program.reverse ? "reverse" : ""}`;
+
+      card.innerHTML = `
+        <img src="${program.image}" alt="program image">
+        <div class="program-content">
+          <h2>${program.title}</h2>
+          <p class="short-text">${program.shortText}</p>
+          <p class="more-text">${program.moreText}</p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Failed to load programs", error);
+  }
+}
+
+
+
+
+

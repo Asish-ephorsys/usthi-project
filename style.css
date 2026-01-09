@@ -233,11 +233,9 @@
   cursor: pointer;
 }
 
-/* ===============================
-   STICKY SUBMIT BUTTON FIX
-================================ */
 
-/* Make popup body scrollable but safe */
+
+/* Make popup body scrollable */
 .ngo-popup-body {
   padding-bottom: 90px; 
 }

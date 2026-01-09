@@ -68,21 +68,7 @@
   gap: 20px;
 }
 
-/* Donate Button */
-/* #donateBtn.donate-btn {
-  background: #0a9f00;
-  color: #fff;
-  padding: 10px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
 
-#donateBtn:hover {
-  background: #087c00;
-  transform: scale(1.05);
-} */
  
 /* Donate Button */
 #ngoDonateBtn.ngo-donate-btn {
@@ -201,9 +187,7 @@
   margin-top: 6px;
 }
 
-/* ===============================
-   INPUT VISIBILITY FIX (FINAL)
-================================ */
+
 
 /* Force text color */
 .ngo-popup input,
@@ -249,11 +233,9 @@
   cursor: pointer;
 }
 
-/* ===============================
-   STICKY SUBMIT BUTTON FIX
-================================ */
 
-/* Make popup body scrollable but safe */
+
+/* Make popup body scrollable  */
 .ngo-popup-body {
   padding-bottom: 90px; 
 }

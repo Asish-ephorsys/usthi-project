@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+ 
+//  donate button section
+ 
+ document.addEventListener("DOMContentLoaded", function () {
 
   const donateBtn = document.getElementById("ngoDonateBtn");
   const popup = document.getElementById("ngoDonatePopup");
@@ -28,13 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
-
-
-
-
 // end
+
+// toggle menu section
 
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");

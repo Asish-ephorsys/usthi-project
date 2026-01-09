@@ -1,5 +1,5 @@
 
-
+// donate button section
 document.addEventListener("DOMContentLoaded", function () {
 
   const donateBtn = document.getElementById("ngoDonateBtn");
@@ -30,6 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// gallery api call
+document.addEventListener("DOMContentLoaded", () => {
+  loadGallery();
+});
+
+async function loadGallery() {
+  try {
+    const response = await fetch("https://your-api-url.com/gallery");
+    const images = await response.json();
+
+    const galleryGrid = document.getElementById("galleryGrid");
+    galleryGrid.innerHTML = "";
+
+    images.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = `gallery-item ${item.big ? "big" : ""}`;
+
+      div.innerHTML = `
+        <img src="${item.image}" alt="Gallery Image">
+      `;
+
+      galleryGrid.appendChild(div);
+    });
+  } catch (error) {
+    console.error("Gallery load failed", error);
+  }
+}
+
+
+
 
 
 
@@ -37,6 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // end
+
+// toggle button section
+
+
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
