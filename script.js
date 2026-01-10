@@ -59,32 +59,32 @@ links.forEach(link => {
 // our testimonial page
 const testimonials = [
     {
-        image: "image/managing img2.jpeg",
+        image: "image/testimonial boy img.jpeg",
         text: "Your NGO has changed lives and brought hope to many families.",
         name: "Samuel Schick"
     },
     {
-        image: "image/managing img2.jpeg",
+        image: "image/testi monial girl img.jpeg",
         text: "Amazing work for education and children welfare.",
         name: "Anita Roy"
     },
     {
-        image: "image/managing img2.jpeg",
+        image: "image/testimonial boy img.jpeg",
         text: "I am proud to support this organization.",
         name: "Rahul Das"
     },
     {
-        image: "image/managing img2.jpeg",
+        image: "image/testi monial girl img.jpeg",
         text: "Your efforts truly make a difference in society.",
         name: "Pooja Mishra"
     },
     {
-        image: "image/managing img2.jpeg",
+        image: "image/testimonial boy img.jpeg",
         text: "Transparent, honest and impactful NGO.",
         name: "Amit Kumar"
     },
     {
-        image: "image/managing img2.jpeg",
+        image: "image/testi monial girl img.jpeg",
         text: "Thank you for helping needy communities.",
         name: "Sneha Patel"
     }
