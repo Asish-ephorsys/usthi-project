@@ -1,99 +1,83 @@
-
 // donate button section
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
+//   const donateBtn = document.getElementById("ngoDonateBtn");
+//   const popup = document.getElementById("ngoDonatePopup");
+//   const overlay = document.getElementById("ngoOverlay");
+//   const closeBtn = document.getElementById("ngoCloseBtn");
+//   const form = document.getElementById("ngoDonationForm");
 
-  const donateBtn = document.getElementById("ngoDonateBtn");
-  const popup = document.getElementById("ngoDonatePopup");
-  const overlay = document.getElementById("ngoOverlay");
-  const closeBtn = document.getElementById("ngoCloseBtn");
-  const form = document.getElementById("ngoDonationForm");
+//   donateBtn.addEventListener("click", function () {
+//     popup.style.display = "block";
+//     overlay.style.display = "block";
+//   });
 
-  donateBtn.addEventListener("click", function () {
-    popup.style.display = "block";
-    overlay.style.display = "block";
-  });
+//   function closePopup() {
+//     popup.style.display = "none";
+//     overlay.style.display = "none";
+//   }
 
-  function closePopup() {
-    popup.style.display = "none";
-    overlay.style.display = "none";
-  }
+//   closeBtn.addEventListener("click", closePopup);
+//   overlay.addEventListener("click", closePopup);
 
-  closeBtn.addEventListener("click", closePopup);
-  overlay.addEventListener("click", closePopup);
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you! Your donation details have been submitted.");
-    closePopup();
-  });
-
-});
-
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert("Thank you! Your donation details have been submitted.");
+//     closePopup();
+//   });
+// });
 
 // gallery api call
-document.addEventListener("DOMContentLoaded", () => {
-  loadGallery();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   loadGallery();
+// });
 
-async function loadGallery() {
-  try {
-    const response = await fetch("https://your-api-url.com/gallery");
-    const images = await response.json();
+// async function loadGallery() {
+//   try {
+//     const response = await fetch("https://your-api-url.com/gallery");
+//     const images = await response.json();
 
-    const galleryGrid = document.getElementById("galleryGrid");
-    galleryGrid.innerHTML = "";
+//     const galleryGrid = document.getElementById("galleryGrid");
+//     galleryGrid.innerHTML = "";
 
-    images.forEach((item) => {
-      const div = document.createElement("div");
-      div.className = `gallery-item ${item.big ? "big" : ""}`;
+//     images.forEach((item) => {
+//       const div = document.createElement("div");
+//       div.className = `gallery-item ${item.big ? "big" : ""}`;
 
-      div.innerHTML = `
-        <img src="${item.image}" alt="Gallery Image">
-      `;
+//       div.innerHTML = `
+//         <img src="${item.image}" alt="Gallery Image">
+//       `;
 
-      galleryGrid.appendChild(div);
-    });
-  } catch (error) {
-    console.error("Gallery load failed", error);
-  }
-}
-
-
-
-
-
-
-
-
+//       galleryGrid.appendChild(div);
+//     });
+//   } catch (error) {
+//     console.error("Gallery load failed", error);
+//   }
+// }
 
 // end
 
 // toggle button section
-
-
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-// Toggle menu
-toggleBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
+if (toggleBtn && navLinks) {
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+}
 
 // Active link switch
 const links = document.querySelectorAll(".nav-links a");
 
-links.forEach(link => {
+links.forEach((link) => {
   link.addEventListener("click", () => {
-    links.forEach(l => l.classList.remove("active"));
+    links.forEach((l) => l.classList.remove("active"));
     link.classList.add("active");
 
     // Close menu on mobile after click
     navLinks.classList.remove("show");
   });
 });
-
-
-
 
 // donate button api call
 
@@ -125,11 +109,19 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = form.querySelector('input[placeholder="Full Name*"]').value.trim();
-    const phone = form.querySelector('input[placeholder="Phone Number*"]').value.trim();
-    const utr = form.querySelector('input[placeholder="UTR / Transaction ID*"]').value.trim();
+    const name = form
+      .querySelector('input[placeholder="Full Name*"]')
+      .value.trim();
+    const phone = form
+      .querySelector('input[placeholder="Phone Number*"]')
+      .value.trim();
+    const utr = form
+      .querySelector('input[placeholder="UTR / Transaction ID*"]')
+      .value.trim();
     const pan = form.querySelector('input[placeholder="Pan"]').value.trim();
-    const message = form.querySelector('textarea[placeholder="Type Your Message"]').value.trim();
+    const message = form
+      .querySelector('textarea[placeholder="Type Your Message"]')
+      .value.trim();
     const screenshot = form.querySelector(".ngo-file-input").files[0];
 
     if (!name || !phone || !utr || !message || !screenshot) {
@@ -158,7 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        alert("Thank you! Your donation details have been submitted successfully.");
+        alert(
+          "Thank you! Your donation details have been submitted successfully."
+        );
         form.reset();
         closePopup();
       } else {
@@ -169,5 +163,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-

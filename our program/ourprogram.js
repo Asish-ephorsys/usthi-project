@@ -1,46 +1,34 @@
+// // donate button section
+// document.addEventListener("DOMContentLoaded", function () {
+//   const donateBtn = document.getElementById("ngoDonateBtn");
+//   const popup = document.getElementById("ngoDonatePopup");
+//   const overlay = document.getElementById("ngoOverlay");
+//   const closeBtn = document.getElementById("ngoCloseBtn");
+//   const form = document.getElementById("ngoDonationForm");
 
-// donate button section
-document.addEventListener("DOMContentLoaded", function () {
+//   donateBtn.addEventListener("click", function () {
+//     popup.style.display = "block";
+//     overlay.style.display = "block";
+//   });
 
-  const donateBtn = document.getElementById("ngoDonateBtn");
-  const popup = document.getElementById("ngoDonatePopup");
-  const overlay = document.getElementById("ngoOverlay");
-  const closeBtn = document.getElementById("ngoCloseBtn");
-  const form = document.getElementById("ngoDonationForm");
+//   function closePopup() {
+//     popup.style.display = "none";
+//     overlay.style.display = "none";
+//   }
 
-  donateBtn.addEventListener("click", function () {
-    popup.style.display = "block";
-    overlay.style.display = "block";
-  });
+//   closeBtn.addEventListener("click", closePopup);
+//   overlay.addEventListener("click", closePopup);
 
-  function closePopup() {
-    popup.style.display = "none";
-    overlay.style.display = "none";
-  }
-
-  closeBtn.addEventListener("click", closePopup);
-  overlay.addEventListener("click", closePopup);
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you! Your donation details have been submitted.");
-    closePopup();
-  });
-
-});
-
-
-
-
-
-
-
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert("Thank you! Your donation details have been submitted.");
+//     closePopup();
+//   });
+// });
 
 // end
 
-
 // toggle button section
-
 
 const toggleBtn = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
@@ -53,9 +41,9 @@ toggleBtn.addEventListener("click", () => {
 // Active link switch
 const links = document.querySelectorAll(".nav-links a");
 
-links.forEach(link => {
+links.forEach((link) => {
   link.addEventListener("click", () => {
-    links.forEach(l => l.classList.remove("active"));
+    links.forEach((l) => l.classList.remove("active"));
     link.classList.add("active");
 
     // Close menu on mobile after click
@@ -66,22 +54,20 @@ links.forEach(link => {
 // our program
 // our program
 
-document.querySelectorAll(".toggle-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const content = btn.parentElement;
-    const moreText = content.querySelector(".more-text");
+// document.querySelectorAll(".toggle-btn").forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     const content = btn.parentElement;
+//     const moreText = content.querySelector(".more-text");
 
-    if (moreText.style.display === "block") {
-      moreText.style.display = "none";
-      btn.innerText = "Show More";
-    } else {
-      moreText.style.display = "block";
-      btn.innerText = "Show Less";
-    }
-  });
-});
-
-
+//     if (moreText.style.display === "block") {
+//       moreText.style.display = "none";
+//       btn.innerText = "Show More";
+//     } else {
+//       moreText.style.display = "block";
+//       btn.innerText = "Show Less";
+//     }
+//   });
+// });
 
 // donate button api call
 
@@ -113,11 +99,19 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = form.querySelector('input[placeholder="Full Name*"]').value.trim();
-    const phone = form.querySelector('input[placeholder="Phone Number*"]').value.trim();
-    const utr = form.querySelector('input[placeholder="UTR / Transaction ID*"]').value.trim();
+    const name = form
+      .querySelector('input[placeholder="Full Name*"]')
+      .value.trim();
+    const phone = form
+      .querySelector('input[placeholder="Phone Number*"]')
+      .value.trim();
+    const utr = form
+      .querySelector('input[placeholder="UTR / Transaction ID*"]')
+      .value.trim();
     const pan = form.querySelector('input[placeholder="Pan"]').value.trim();
-    const message = form.querySelector('textarea[placeholder="Type Your Message"]').value.trim();
+    const message = form
+      .querySelector('textarea[placeholder="Type Your Message"]')
+      .value.trim();
     const screenshot = form.querySelector(".ngo-file-input").files[0];
 
     if (!name || !phone || !utr || !message || !screenshot) {
@@ -146,7 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        alert("Thank you! Your donation details have been submitted successfully.");
+        alert(
+          "Thank you! Your donation details have been submitted successfully."
+        );
         form.reset();
         closePopup();
       } else {
@@ -158,41 +154,84 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ✅ STEP 2: ADD THIS DUMMY DATA CODE (COPY FULL)
+// ✅ STEP 2: ADD THIS DUMMY DATA CODE (COPY FULL)
+// ✅ STEP 2: ADD THIS DUMMY DATA CODE (COPY FULL)
+// document.addEventListener("DOMContentLoaded", () => {
+//   const dummyPrograms = [
+//     {
+//       id: 1,
+//       heading: "Usthi School – Puri   Asish behera",
+//       description:
+//         "This project supports children of fishing communities in Penthakata village, Odisha. The foundation provides education from kindergarten to class ten, ensuring safety, nutrition, and long-term development for underprivileged children."
+//     },
+//     {
+//       id: 2,
+//       heading: "Ananda Education Centre – Kolkata",
+//       description:
+//         "Ananda Education Centre provides quality education, midday meals, and emotional support to underprivileged children living on the outskirts of Kolkata, helping them complete their schooling with dignity."
+//     },
+//     {
+//       id: 3,
+//       heading: "Waste Management Program",
+//       description:
+//         "This initiative focuses on waste segregation, recycling awareness, and community cleanliness drives, empowering local communities to maintain a cleaner and healthier environment."
+//     },
+//        {
+//       id: 4,
+//       heading: "Biswajit das asisg – Puri   Asish behera",
+//       description:
+//         "This project supports children of fishing communities in Penthakata village, Odisha. The foundation provides education from kindergarten to class ten, ensuring safety, nutrition, and long-term development for underprivileged children."
+//     },
+//      {
+//       id: 4,
+//       heading: "Biswajit das asisg – Puri   Asish behera",
+//       description:
+//         "This project supports children of fishing communities in Penthakata village, Odisha. The foundation provides education from kindergarten to class ten, ensuring safety, nutrition, and long-term development for underprivileged children."
+//     },
 
-// our program api call
-document.addEventListener("DOMContentLoaded", () => {
-  fetchPrograms();
-});
+//   ];
 
-async function fetchPrograms() {
-  try {
-    const response = await fetch("https://your-api-url.com/programs");
-    const programs = await response.json();
+//   const container = document.getElementById("programsContainer");
 
-    const container = document.getElementById("programsContainer");
-    container.innerHTML = "";
+//   container.innerHTML = `<h1 class="section-title">Our Programs</h1>`;
 
-    programs.forEach((program) => {
-      const card = document.createElement("div");
-      card.className = `program-card ${program.reverse ? "reverse" : ""}`;
+//   dummyPrograms.forEach((program, index) => {
+//     const card = document.createElement("div");
 
-      card.innerHTML = `
-        <img src="${program.image}" alt="program image">
-        <div class="program-content">
-          <h2>${program.title}</h2>
-          <p class="short-text">${program.shortText}</p>
-          <p class="more-text">${program.moreText}</p>
-        </div>
-      `;
+//     card.className = `program-card ${index % 2 !== 0 ? "reverse" : ""}`;
 
-      container.appendChild(card);
-    });
-  } catch (error) {
-    console.error("Failed to load programs", error);
-  }
-}
+//     card.innerHTML = `
+//       <img src="https://via.placeholder.com/450x300?text=Program+Image">
+//       <div class="program-content">
+//         <h2>${program.heading}</h2>
 
+//         <p class="short-text">
+//           ${program.description.substring(0, 120)}...
+//         </p>
 
+//         <p class="more-text">
+//           ${program.description}
+//         </p>
 
+//         <button class="toggle-btn">Show More</button>
+//       </div>
+//     `;
 
+//     container.appendChild(card);
+//   });
 
+//   document.querySelectorAll(".toggle-btn").forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       const moreText = btn.previousElementSibling;
+
+//       if (moreText.style.display === "block") {
+//         moreText.style.display = "none";
+//         btn.innerText = "Show More";
+//       } else {
+//         moreText.style.display = "block";
+//         btn.innerText = "Show Less";
+//       }
+//     });
+//   });
+// });
