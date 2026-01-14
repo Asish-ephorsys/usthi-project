@@ -22,11 +22,6 @@ function closePopup() {
   popupMsg.classList.remove("show");
 }
 
-// function openDemo() {
-//   document.getElementById("authModal").style.display = "none";
-//   adminPanel.style.display = "flex";
-// }
-
 function logout() {
   location.reload();
 }
@@ -127,12 +122,6 @@ function openUpload(type) {
     eventDesc.style.display = "block";
   }
 
-  // EVENT → MULTIPLE IMAGES + DESCRIPTION
-  // if (type === "Event") {
-  //   fileInput.accept = "image/*";
-  //   fileInput.multiple = true;
-  //   eventDesc.style.display = "block";
-  // }
   if (type === "Program") {
     fileInput.accept = "image/*";
     fileInput.multiple = true;
@@ -144,42 +133,76 @@ function openUpload(type) {
   document.getElementById("uploadPopup").style.display = "flex";
 }
 
-// function closeUpload() {
-//   document.getElementById("uploadPopup").style.display = "none";
-// }
-
+// ===== UPLOAD SUBMIT FUNCTION (ADD THIS AT BOTTOM) =====
 async function submitUpload() {
-  if (uploadType !== "Program") {
-    alert("Only event upload handled here");
+  const file = document.getElementById("uploadInput");
+
+  // 🔴 PHOTO UPLOAD
+  if (uploadType === "Photo") {
+    if (!file.files.length) {
+      alert("Please select image");
+      return;
+    }
+
+    const formData = new FormData();
+    for (let i = 0; i < file.files.length; i++) {
+      formData.append("file", file.files[i]);
+    }
+
+    const res = await fetch("http://localhost:8000/onlyImage/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!res.ok) {
+      alert("Photo upload failed");
+      return;
+    }
+
+    alert("Photo uploaded successfully");
+    closeUpload();
+    loadGalleryImages();
     return;
   }
 
-  const title = document.getElementById("eventTitle").value.trim();
-  const desc = document.getElementById("eventDesc").value.trim();
-  const input = document.getElementById("uploadInput");
+  // 🔴 PROGRAM UPLOAD
+  if (uploadType === "Program") {
+    const heading = document.getElementById("eventTitle").value.trim();
+    const description = document.getElementById("eventDesc").value.trim();
 
-  if (!title || !desc || !input.files.length) {
-    alert("Please fill all event fields");
+    if (!heading || !description || !fileInput.files.length) {
+      alert("Please fill all program fields");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("heading", heading);
+    formData.append("description", description);
+
+    for (let i = 0; i < fileInput.files.length; i++) {
+      formData.append("file", fileInput.files[i]);
+    }
+
+    const res = await fetch("http://localhost:8000/onlyImage", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!res.ok) {
+      alert("Program upload failed");
+      return;
+    }
+
+    alert("Program added successfully");
+    closeUpload();
+    loadEvents();
     return;
   }
 
-  const formData = new FormData();
-  formData.append("title", title);
-  formData.append("description", desc);
-
-  for (let i = 0; i < input.files.length; i++) {
-    formData.append("images", input.files[i]);
-  }
-
-  await fetch("http://localhost:8000/api/events", {
-    method: "POST",
-    body: formData,
-  });
-
-  alert("Event added successfully");
-  closeUpload();
-  loadEvents();
+  alert("Upload type not supported yet");
 }
+
+
 
 async function loadEvents() {
   const container = document.getElementById("eventGrid");
@@ -187,7 +210,7 @@ async function loadEvents() {
 
   container.innerHTML = "";
 
-  const res = await fetch("http://localhost:8000/api/events");
+  const res = await fetch("http://localhost:8000/images");
   const events = await res.json();
 
   events.forEach((e) => {
@@ -211,7 +234,7 @@ async function loadEvents() {
 async function deleteEvent(id) {
   if (!confirm("Delete this event?")) return;
 
-  await fetch(`http://localhost:8000/api/events/${id}`, {
+  await fetch(`http://localhost:8000/images/${id}`, {
     method: "DELETE",
   });
 
@@ -249,7 +272,6 @@ if (contactForm) {
   });
 }
 
-
 function openContactPage() {
   document.getElementById("contactAdmin").style.display = "block";
   loadContactMessages();
@@ -282,7 +304,9 @@ async function loadContactMessages() {
 
       <div class="card-actions">
         <button onclick="markAsRead('${msg.id}', event)">Mark Read</button>
-       <button class="delete-btn" onclick="deleteMessage('${msg.id}', event, this)">Delete</button>
+       <button class="delete-btn" onclick="deleteMessage('${
+         msg.id
+       }', event, this)">Delete</button>
 
       </div>
     `;
@@ -298,7 +322,6 @@ async function markAsRead(id, e) {
   });
   loadContactMessages();
 }
-
 
 async function deleteMessage(id, e, btn) {
   e.stopPropagation();
@@ -379,8 +402,6 @@ document.getElementById("messagePopup").addEventListener("click", function (e) {
 
 const API_BASE_URL = "http://localhost:8000";
 // const DONATE_API = `${API_BASE_URL}/donate`;
-
-
 
 // OPEN / CLOSE PAGE
 function openDonationPage() {
@@ -619,4 +640,50 @@ async function updateStatsCounts() {
   } catch (err) {
     console.error("Stats count error:", err);
   }
+}
+
+// image button api call system
+
+async function loadGalleryImages() {
+  const grid = document.getElementById("galleryGrid");
+  grid.innerHTML = "Loading...";
+
+  const res = await fetch("http://localhost:8000/images");
+  const images = await res.json();
+
+  grid.innerHTML = "";
+
+  images.forEach((img) => {
+    const card = document.createElement("div");
+    card.className = "gallery-card";
+
+    card.innerHTML = `
+      <img src="${img.image_url || img.url}">
+      <button onclick="deleteImage('${img.id}', this)">Delete</button>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+async function deleteImage(id, btn) {
+  if (!confirm("Delete this image?")) return;
+
+  const res = await fetch(`http://localhost:8000/images/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    alert("Delete failed");
+    return;
+  }
+
+  // ✅ remove instantly from UI
+  btn.closest(".gallery-card").remove();
+}
+function openGallery() {
+  document.getElementById("galleryAdmin").style.display = "block";
+  loadGalleryImages(); // ✅ API CALLED HERE
+}
+function closeGallery() {
+  document.getElementById("galleryAdmin").style.display = "none";
 }

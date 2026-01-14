@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
-    <!-- <h1>Welcome to Dashboard</h1>
-    <p>You are logged in successfully 🎉</p> -->
+   
 
     <!-- ADMIN PANEL -->
     <div class="admin-panel" id="adminPanel">
@@ -44,7 +43,7 @@
               <img src="/image/usthi foundation.jpeg" />
               <span>Admin</span> ▼
               <div class="dropdown" id="dropdown">
-                <!-- <button>Profile</button> -->
+               
                 <button onclick="logout()">Logout</button>
               </div>
             </div>
@@ -66,7 +65,8 @@
             <h3>Manage Photo Gallery</h3>
             <img src="/image/teo.jpeg" />
             <button onclick="openUpload('Photo')">Add New Photo</button>
-            <button onclick="showGallery()">View Gallery</button>
+            <!-- <button onclick="showGallery()">View Gallery</button> -->
+            <button onclick="openGallery()">View Gallery</button>
           </div>
           <div class="card">
             <h3>Our Program</h3>
@@ -91,7 +91,7 @@
       </main>
     </div>
 
-    <!-- sidebar pop up part -->
+ 
     <!-- UPLOAD POPUP -->
     <div class="upload-popup" id="uploadPopup">
       <div class="upload-box">
@@ -144,46 +144,13 @@
         <button class="close-contact" onclick="closeDonationPage()">✖</button>
       </div>
 
-      <!-- ✅ ADD DONATION FORM HERE -->
-      <!-- <div class="donation-form-box">
-        <h3>Add New Donation</h3>
-
-        <form id="donationForm">
-          <input type="text" id="name" placeholder="Donor Name" required />
-
-          <input type="tel" id="mobile" placeholder="Mobile Number" required />
-
-          <input type="text" id="utr" placeholder="UTR Number" required />
-
-           ✅ PAN FIELD -->
-      <!-- <input
-            type="text"
-            id="pan"
-            placeholder="PAN Number (Optional)"
-            maxlength="10"
-            style="text-transform: uppercase"
-          />
-
-          <input type="file" id="image" required />
-
-          <button type="submit">Submit Donation</button>
-        </form> -->
-
-      <!-- <hr style="margin: 20px 0" />
-      </div> -->
+    
 
       <!-- EXISTING GRID -->
       <div class="donation-grid" id="donationGrid"></div>
     </div>
 
-    <!-- <div class="donation-admin" id="donationAdmin">
-      <div class="contact-header">
-        <h2>Donation Details</h2>
-        <button class="close-contact" onclick="closeDonationPage()">✖</button>
-      </div>
-
-      <div class="donation-grid" id="donationGrid"></div>
-    </div> -->
+  
 
     <!-- DONATION POPUP -->
     <div class="donation-popup" id="donationPopup">
@@ -191,6 +158,18 @@
         <span class="popup-close" onclick="closeDonationPopup()">✖</span>
         <div id="donationPopupDetails"></div>
       </div>
+    </div>
+
+    <!-- ===============================
+     GALLERY ADMIN PAGE
+================================ -->
+    <div class="gallery-admin" id="galleryAdmin" style="display: none">
+      <div class="contact-header">
+        <h2>Photo Gallery</h2>
+        <button class="close-contact" onclick="closeGallery()">✖</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
     </div>
 
     <script src="dashboard.js"></script>
