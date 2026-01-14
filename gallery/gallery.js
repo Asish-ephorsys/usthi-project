@@ -163,3 +163,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadAdminImages();
+});
+
+const API_BASE_URL = "http://localhost:8000/onlyImage";
+
+async function loadAdminImages() {
+  try {
+    const response = await fetch(API_BASE_URL);
+    if (!response.ok) {
+      throw new Error("API not responding");
+    }
+
+    const images = await response.json();
+    const adminGrid = document.getElementById("adminGalleryGrid");
+
+    if (!adminGrid) {
+      console.error("❌ adminGalleryGrid not found in DOM");
+      return;
+    }
+
+    adminGrid.innerHTML = "";
+
+    images.forEach(img => {
+      const div = document.createElement("div");
+      div.className = "gallery-item";
+
+      const imageEl = document.createElement("img");
+      imageEl.src = `http://localhost:8000${img.image_url}`;
+      imageEl.alt = img.filename;
+      imageEl.loading = "lazy";
+
+      div.appendChild(imageEl);
+      adminGrid.appendChild(div);
+    });
+
+  } catch (error) {
+    console.error("❌ Error loading admin images:", error);
+  }
+}
+  
